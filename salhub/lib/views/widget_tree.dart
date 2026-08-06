@@ -11,14 +11,17 @@ class WidgetTree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Salhub"), centerTitle: true),
-      body: ValueListenableBuilder(
-        valueListenable: selectedPageNotifier,
-        builder: (context, value, child) {
-          return pages.elementAt(value);
-        },
+      body: Stack(
+        children: [
+          ValueListenableBuilder(
+            valueListenable: selectedPageNotifier,
+            builder: (context, value, child) {
+              return pages.elementAt(value);
+            },
+          ),
+          const Align(alignment: Alignment.bottomCenter, child: NavbarWidget()),
+        ],
       ),
-      bottomNavigationBar: NavbarWidget(),
     );
   }
 }
