@@ -52,11 +52,11 @@ class LevelWidget extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(fontSize: 16, color: Color(0xFF790303)),
+                    style: TextStyle(fontSize: 24, color: Color(0xFF6D3F21)),
                   ),
                   Text(
                     description,
-                    style: TextStyle(fontSize: 16, color: Color(0xFF790303)),
+                    style: TextStyle(fontSize: 16, color: Color(0xFF6D3F21)),
                   ),
                 ],
               ),
