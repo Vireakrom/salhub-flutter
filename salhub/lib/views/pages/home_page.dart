@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salhub/views/pages/rean_peasa/rean_peasa_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -253,60 +254,70 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                              color: Color(0xFF21DB81),
-                              width: 2,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ReanPeasaPage(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: Color(0xFF21DB81),
+                                width: 2,
+                              ),
                             ),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.center,
+                            child: Stack(
+                              alignment: Alignment.center,
 
-                            children: [
-                              Positioned.fill(
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(18),
-                                  child: ShaderMask(
-                                    blendMode: BlendMode.srcIn,
-                                    shaderCallback: (bounds) => LinearGradient(
-                                      colors: [
-                                        Color(0xFF25E555),
-                                        Color(0xFF8CF1B0),
-                                      ],
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                    ).createShader(bounds),
-                                    child: Container(color: Colors.white),
+                              children: [
+                                Positioned.fill(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(18),
+                                    child: ShaderMask(
+                                      blendMode: BlendMode.srcIn,
+                                      shaderCallback: (bounds) =>
+                                          LinearGradient(
+                                            colors: [
+                                              Color(0xFF25E555),
+                                              Color(0xFF8CF1B0),
+                                            ],
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                          ).createShader(bounds),
+                                      child: Container(color: Colors.white),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    SizedBox(
-                                      child: Image.asset(
-                                        './assets/images/hand.png',
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(
+                                        child: Image.asset(
+                                          './assets/images/hand.png',
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      "រៀនភាសាប្រចាំថ្ងៃ",
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Color(0xFF790303),
+                                      Text(
+                                        "រៀនភាសាប្រចាំថ្ងៃ",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xFF790303),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
-
                         Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
