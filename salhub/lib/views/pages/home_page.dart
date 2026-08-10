@@ -222,32 +222,64 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        ShaderMask(
-                          shaderCallback: (bounds) => LinearGradient(
-                            colors: [Color(0xFFFF8373), Color(0xFFFFE8F2)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ).createShader(bounds),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ReanPeasaPage(),
+                              ),
+                            );
+                          },
                           child: Container(
-                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(color: Color(0xFFBA0303)),
+                              border: Border.all(
+                                color: Color(0xFFBA0303),
+                                width: 2,
+                              ),
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                            child: Stack(
+                              alignment: Alignment.center,
+
                               children: [
-                                SizedBox(
-                                  child: Image.asset(
-                                    './assets/images/message.png',
+                                Positioned.fill(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(18),
+                                    child: ShaderMask(
+                                      blendMode: BlendMode.srcIn,
+                                      shaderCallback: (bounds) =>
+                                          LinearGradient(
+                                            colors: [
+                                              Color(0xFFFF8373),
+                                              Color(0xFFFFE8F2),
+                                            ],
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                          ).createShader(bounds),
+                                      child: Container(color: Colors.white),
+                                    ),
                                   ),
                                 ),
-                                Text(
-                                  "រៀនភាសាប្រចាំថ្ងៃ",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xFF790303),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(
+                                        child: Image.asset(
+                                          './assets/images/message.png',
+                                        ),
+                                      ),
+                                      Text(
+                                        "រៀនភាសាប្រចាំថ្ងៃ",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xFF790303),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
@@ -259,7 +291,7 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ReanPeasaPage(),
+                                builder: (context) => Placeholder(),
                               ),
                             );
                           },
@@ -305,7 +337,7 @@ class HomePage extends StatelessWidget {
                                         ),
                                       ),
                                       Text(
-                                        "រៀនភាសាប្រចាំថ្ងៃ",
+                                        "ភាសាចម្រុះ",
                                         style: TextStyle(
                                           fontSize: 16,
                                           color: Color(0xFF790303),
