@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:salhub/views/pages/rean_peasa/rean_peasa_five_page.dart';
+import 'package:salhub/views/pages/rean_peasa/rean_peasa_four_page.dart';
 import 'package:salhub/views/pages/rean_peasa/rean_peasa_one_page.dart';
+import 'package:salhub/views/pages/rean_peasa/rean_peasa_six_page.dart';
+import 'package:salhub/views/pages/rean_peasa/rean_peasa_three_page.dart';
+import 'package:salhub/views/pages/rean_peasa/rean_peasa_two_page.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 import 'package:salhub/views/widgets/level_widget.dart';
 
@@ -52,27 +57,27 @@ class ReanPeasaPage extends StatelessWidget {
                   LevelWidget(
                     title: "កម្រិត ២",
                     description: "Level 2",
-                    nextPage: Placeholder(),
+                    nextPage: ReanPeasaTwoPage(),
                   ),
                   LevelWidget(
                     title: "កម្រិត ៣",
                     description: "Level 3",
-                    nextPage: Placeholder(),
+                    nextPage: ReanPeasaThreePage(),
                   ),
                   LevelWidget(
                     title: "កម្រិត ៤",
                     description: "Level 4",
-                    nextPage: Placeholder(),
+                    nextPage: ReanPeasaFourPage(),
                   ),
                   LevelWidget(
                     title: "កម្រិត ៥",
                     description: "Level 5",
-                    nextPage: Placeholder(),
+                    nextPage: ReanPeasaFivePage(),
                   ),
                   LevelWidget(
                     title: "កម្រិត ៦",
                     description: "Level 6",
-                    nextPage: Placeholder(),
+                    nextPage: ReanPeasaSixPage(),
                   ),
                 ],
               ),

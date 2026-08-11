@@ -27,13 +27,14 @@ class _LeftMessageWidgetState extends State<LeftMessageWidget> {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerLeft, // Forces the container to the left
-      child: FittedBox(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Image.asset('assets/images/left_message.png'),
-            SizedBox(width: 10),
-            ShaderMask(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Image.asset('assets/images/left_message.png'),
+          SizedBox(width: 10),
+          Flexible(
+            child: ShaderMask(
               shaderCallback: (bounds) => LinearGradient(
                 colors: [Color(0xFFFF8373), Color(0xFFFFE8F2)],
                 begin: Alignment.topCenter,
@@ -65,19 +66,19 @@ class _LeftMessageWidgetState extends State<LeftMessageWidget> {
                 ),
               ),
             ),
-            SizedBox(width: 10),
-            GestureDetector(
-              onTap: () {
-                playSound();
-              },
-              child: Icon(
-                Icons.volume_up,
-                color: Colors.blue, // Matches the blue shade in your image
-                size: 30.0,
-              ),
+          ),
+          SizedBox(width: 10),
+          GestureDetector(
+            onTap: () {
+              playSound();
+            },
+            child: Icon(
+              Icons.volume_up,
+              color: Colors.blue, // Matches the blue shade in your image
+              size: 30.0,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

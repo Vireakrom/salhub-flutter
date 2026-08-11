@@ -23,7 +23,7 @@ class WelcomePage extends StatelessWidget {
             ),
             SizedBox(height: 57),
             SizedBox(
-              height: 196,
+              // height: 196,
               child: Image.asset('./assets/images/profile.png'),
             ),
             SizedBox(height: 57),
@@ -47,7 +47,7 @@ class WelcomePage extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
-                side: const BorderSide(color: Color(0xFF3F2514), width: 1),
+                side: const BorderSide(color: Color(0xFF3F2514), width: 2),
               ),
               child: Text("Get Started"),
             ),

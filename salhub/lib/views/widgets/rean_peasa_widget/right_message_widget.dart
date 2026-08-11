@@ -27,22 +27,24 @@ class _RightMessageWidgetState extends State<RightMessageWidget> {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerRight,
-      child: FittedBox(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            GestureDetector(
-              onTap: () {
-                playSound();
-              },
-              child: Transform.flip(
-                flipX: true,
-                child: Icon(Icons.volume_up, color: Colors.blue, size: 30.0),
-              ),
-            ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
 
-            SizedBox(width: 10),
-            ShaderMask(
+        children: [
+          GestureDetector(
+            onTap: () {
+              playSound();
+            },
+            child: Transform.flip(
+              flipX: true,
+              child: Icon(Icons.volume_up, color: Colors.blue, size: 30.0),
+            ),
+          ),
+
+          SizedBox(width: 10),
+          Flexible(
+            child: ShaderMask(
               shaderCallback: (bounds) => LinearGradient(
                 colors: [Color(0xFFFF8373), Color(0xFFFFE8F2)],
                 begin: Alignment.topCenter,
@@ -57,6 +59,7 @@ class _RightMessageWidgetState extends State<RightMessageWidget> {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
+
                   children: [
                     Text(
                       widget.khmerText,
@@ -74,10 +77,10 @@ class _RightMessageWidgetState extends State<RightMessageWidget> {
                 ),
               ),
             ),
-            SizedBox(width: 10),
-            Image.asset('assets/images/right_message.png'),
-          ],
-        ),
+          ),
+          SizedBox(width: 10),
+          Image.asset('assets/images/right_message.png'),
+        ],
       ),
     );
   }
