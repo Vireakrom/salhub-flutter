@@ -5,6 +5,7 @@ import 'package:salhub/views/widgets/navbar_widget.dart';
 
 List<Widget> pages = [HomePage()];
 
+
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
 
