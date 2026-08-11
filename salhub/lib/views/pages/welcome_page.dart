@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:salhub/views/pages/login_page.dart';
+import 'package:salhub/views/widgets/salhub_widget.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -13,71 +15,7 @@ class WelcomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "S",
-                  style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF6A8926),
-                  ),
-                ),
-                SizedBox(width: 14),
-                Text(
-                  "A",
-                  style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFFF7A22A),
-                  ),
-                ),
-                SizedBox(width: 14),
-                ShaderMask(
-                  shaderCallback: (bounds) => LinearGradient(
-                    colors: [Color(0xFF0097B5), Color(0xFFFFFFFF)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ).createShader(bounds),
-                  child: Text(
-                    "L",
-                    style: TextStyle(
-                      fontSize: 48,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 14),
-                Text(
-                  "H",
-                  style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF3F2514),
-                  ),
-                ),
-                SizedBox(width: 14),
-                Text(
-                  "u",
-                  style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF3F2514),
-                  ),
-                ),
-                SizedBox(width: 14),
-                Text(
-                  "b",
-                  style: TextStyle(
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF3F2514),
-                  ),
-                ),
-              ],
-            ),
+            SalhubWidget(),
             SizedBox(height: 20),
             Text(
               "Squirrel Acorn Learning Hub",
@@ -85,7 +23,7 @@ class WelcomePage extends StatelessWidget {
             ),
             SizedBox(height: 57),
             SizedBox(
-              height: 196,
+              // height: 196,
               child: Image.asset('./assets/images/profile.png'),
             ),
             SizedBox(height: 57),
@@ -97,14 +35,19 @@ class WelcomePage extends StatelessWidget {
             SizedBox(height: 50),
 
             FilledButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
               style: FilledButton.styleFrom(
                 backgroundColor: Color(0xFFD9D9D9),
                 foregroundColor: Color(0xFF3F2514),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
                 ),
-                side: const BorderSide(color: Color(0xFF3F2514), width: 1),
+                side: const BorderSide(color: Color(0xFF3F2514), width: 2),
               ),
               child: Text("Get Started"),
             ),
