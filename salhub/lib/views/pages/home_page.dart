@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salhub/views/pages/jomrous/jomrous_page.dart';
 import 'package:salhub/views/pages/rean_peasa/rean_peasa_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -401,7 +402,7 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Placeholder(),
+                                builder: (context) => JomrousPage(),
                               ),
                             );
                           },
