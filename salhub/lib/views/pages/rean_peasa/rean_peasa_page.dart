@@ -13,6 +13,9 @@ class ReanPeasaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -25,19 +28,21 @@ class ReanPeasaPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: const EdgeInsets.all(15.0),
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/images/sc_background.png'),
-              fit: BoxFit.contain,
-              colorFilter: ColorFilter.mode(
-                Colors.white.withValues(alpha: 0.1),
-                BlendMode.dstATop,
-              ),
+      body: Container(
+        width: screenWidth,
+        height: screenHeight,
+        padding: const EdgeInsets.all(15.0),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/sc_background.png'),
+            fit: BoxFit.contain,
+            colorFilter: ColorFilter.mode(
+              Colors.white.withValues(alpha: 0.1),
+              BlendMode.dstATop,
             ),
           ),
+        ),
+        child: SingleChildScrollView(
           child: Column(
             children: [
               GridView.count(

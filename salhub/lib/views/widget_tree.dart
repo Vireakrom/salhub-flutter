@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/data/notfiers.dart';
 import 'package:salhub/views/pages/home_page.dart';
+import 'package:salhub/views/pages/lomhat_page/lomhat_page.dart';
 import 'package:salhub/views/widgets/navbar_widget.dart';
 
-List<Widget> pages = [HomePage()];
-
+List<Widget> pages = [HomePage(), LomhatPage()];
 
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
