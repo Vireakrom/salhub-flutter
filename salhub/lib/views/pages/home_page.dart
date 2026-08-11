@@ -6,6 +6,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
+    // Define a shared height for your hero section so everything scales together
+    double heroHeight = screenHeight * 0.7;
     return Scaffold(
       body: SingleChildScrollView(
         child: Stack(
@@ -16,9 +21,13 @@ class HomePage extends StatelessWidget {
                 Stack(
                   alignment: Alignment.center,
                   children: [
-                    Hero(
-                      tag: 'HomeHero',
-                      child: Image.asset('./assets/images/home_background.png'),
+                    SizedBox(
+                      width: screenWidth,
+                      height: heroHeight,
+                      child: Image.asset(
+                        './assets/images/home_background.png',
+                        fit: BoxFit.cover,
+                      ),
                     ),
                     FittedBox(
                       child: Column(
@@ -67,161 +76,262 @@ class HomePage extends StatelessWidget {
                       mainAxisSpacing: 10,
                       crossAxisCount: 2,
                       children: <Widget>[
-                        ShaderMask(
-                          shaderCallback: (bounds) => LinearGradient(
-                            colors: [Color(0xFFFFF3B1), Color(0xFFF8F1CD)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ).createShader(bounds),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ReanPeasaPage(),
+                              ),
+                            );
+                          },
                           child: Container(
-                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(color: Color(0xFFF7BE2D)),
+                              border: Border.all(
+                                color: Color(0xFFF7BE2D),
+                                width: 2,
+                              ),
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                            child: Stack(
+                              alignment: Alignment.center,
+
                               children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "ក",
-                                      style: TextStyle(
-                                        color: Color(0xFFF7BE2D),
-                                        fontSize: 36,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                Positioned.fill(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(18),
+                                    child: ShaderMask(
+                                      blendMode: BlendMode.srcIn,
+                                      shaderCallback: (bounds) =>
+                                          LinearGradient(
+                                            colors: [
+                                              Color(0xFFFFF3B1),
+                                              Color(0xFFF8F1CD),
+                                            ],
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                          ).createShader(bounds),
+                                      child: Container(color: Colors.white),
                                     ),
-                                    Text(
-                                      "ិ",
-                                      style: TextStyle(
-                                        color: Color(0xFFF7BE2D),
-                                        fontSize: 36,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      "ឥ",
-                                      style: TextStyle(
-                                        color: Color(0xFFF7BE2D),
-                                        fontSize: 36,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Text(
-                                  "អក្សរខ្មែរ",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xFF6D3F21),
-                                    fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                                FittedBox(
-                                  child: Text(
-                                    "ព្យញ្ជនៈ ស្រះនិស្យ័យ ស្រះពេញតួរ",
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      color: Color(0xFF6D3F21),
-                                    ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "ក",
+                                            style: TextStyle(
+                                              color: Color(0xFFF7BE2D),
+                                              fontSize: 36,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Text(
+                                            "ិ",
+                                            style: TextStyle(
+                                              color: Color(0xFFF7BE2D),
+                                              fontSize: 36,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Text(
+                                            "ឥ",
+                                            style: TextStyle(
+                                              color: Color(0xFFF7BE2D),
+                                              fontSize: 36,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "អក្សរខ្មែរ",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xFF6D3F21),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      FittedBox(
+                                        child: Text(
+                                          "ព្យញ្ជនៈ ស្រះនិស្យ័យ ស្រះពេញតួរ",
+                                          style: TextStyle(
+                                            fontSize: 10,
+                                            color: Color(0xFF6D3F21),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
                             ),
                           ),
                         ),
-                        ShaderMask(
-                          shaderCallback: (bounds) => LinearGradient(
-                            colors: [Color(0xFFB8F8FE), Color(0xFFCDF6FA)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ).createShader(bounds),
+
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ReanPeasaPage(),
+                              ),
+                            );
+                          },
                           child: Container(
-                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(color: Color(0xFF0097B5)),
+                              border: Border.all(
+                                color: Color(0xFF0097B5),
+                                width: 2,
+                              ),
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                            child: Stack(
+                              alignment: Alignment.center,
+
                               children: [
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "១",
-                                      style: TextStyle(
-                                        color: Color(0xFF0097B5),
-                                        fontSize: 36,
-                                        fontWeight: FontWeight.bold,
-                                      ),
+                                Positioned.fill(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(18),
+                                    child: ShaderMask(
+                                      blendMode: BlendMode.srcIn,
+                                      shaderCallback: (bounds) =>
+                                          LinearGradient(
+                                            colors: [
+                                              Color(0xFFB8F8FE),
+                                              Color(0xFFCDF6FA),
+                                            ],
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                          ).createShader(bounds),
+                                      child: Container(color: Colors.white),
                                     ),
-                                    Text(
-                                      "២",
-                                      style: TextStyle(
-                                        color: Color(0xFF0097B5),
-                                        fontSize: 36,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                    Text(
-                                      "៣",
-                                      style: TextStyle(
-                                        color: Color(0xFF0097B5),
-                                        fontSize: 36,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                                Text(
-                                  "រៀនលេខខ្មែរ",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xFF01518A),
-                                    fontWeight: FontWeight.bold,
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "១",
+                                            style: TextStyle(
+                                              color: Color(0xFF0097B5),
+                                              fontSize: 36,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Text(
+                                            "២",
+                                            style: TextStyle(
+                                              color: Color(0xFF0097B5),
+                                              fontSize: 36,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          Text(
+                                            "៣",
+                                            style: TextStyle(
+                                              color: Color(0xFF0097B5),
+                                              fontSize: 36,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Text(
+                                        "រៀនលេខខ្មែរ",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xFF01518A),
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
                             ),
                           ),
                         ),
-                        ShaderMask(
-                          shaderCallback: (bounds) => LinearGradient(
-                            colors: [Color(0xFFE6B8FE), Color(0xFFF8E2FF)],
-                            begin: Alignment.topLeft,
-                            end: Alignment.bottomRight,
-                          ).createShader(bounds),
+
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ReanPeasaPage(),
+                              ),
+                            );
+                          },
                           child: Container(
-                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(20),
-                              border: Border.all(color: Color(0xFFB342FF)),
+                              border: Border.all(
+                                color: Color(0xFFB342FF),
+                                width: 2,
+                              ),
                             ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
+                            child: Stack(
+                              alignment: Alignment.center,
+
                               children: [
-                                SizedBox(
-                                  child: Image.asset(
-                                    './assets/images/book.png',
+                                Positioned.fill(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(18),
+                                    child: ShaderMask(
+                                      blendMode: BlendMode.srcIn,
+                                      shaderCallback: (bounds) =>
+                                          LinearGradient(
+                                            colors: [
+                                              Color(0xFFE6B8FE),
+                                              Color(0xFFF8E2FF),
+                                            ],
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                          ).createShader(bounds),
+                                      child: Container(color: Colors.white),
+                                    ),
                                   ),
                                 ),
-                                Text(
-                                  "រៀនវេយ្យាករណ៍",
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    color: Color(0xFF510286),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(
+                                        child: Image.asset(
+                                          './assets/images/book.png',
+                                        ),
+                                      ),
+                                      Text(
+                                        "រៀនវេយ្យាករណ៍",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xFF510286),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ],
                             ),
                           ),
                         ),
+
                         GestureDetector(
                           onTap: () {
                             Navigator.push(
@@ -350,59 +460,71 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                              color: Color(0xFFBC850C),
-                              width: 2,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Placeholder(),
+                              ),
+                            );
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              border: Border.all(
+                                color: Color(0xFFBC850C),
+                                width: 2,
+                              ),
                             ),
-                          ),
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Positioned.fill(
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(18),
-                                  child: ShaderMask(
-                                    blendMode: BlendMode.srcIn,
-                                    shaderCallback: (bounds) => LinearGradient(
-                                      colors: [
-                                        Color(0xFFFFC973),
-                                        Color(0xFFFFF2DD),
-                                      ],
-                                      begin: Alignment.topLeft,
-                                      end: Alignment.bottomRight,
-                                    ).createShader(bounds),
-                                    child: Container(color: Colors.white),
+                            child: Stack(
+                              alignment: Alignment.center,
+
+                              children: [
+                                Positioned.fill(
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(18),
+                                    child: ShaderMask(
+                                      blendMode: BlendMode.srcIn,
+                                      shaderCallback: (bounds) =>
+                                          LinearGradient(
+                                            colors: [
+                                              Color(0xFFFFC973),
+                                              Color(0xFFFFF2DD),
+                                            ],
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                          ).createShader(bounds),
+                                      child: Container(color: Colors.white),
+                                    ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-
-                                  children: [
-                                    SizedBox(
-                                      child: Image.asset(
-                                        './assets/images/eye_book.png',
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      SizedBox(
+                                        child: Image.asset(
+                                          './assets/images/eye_book.png',
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      "វប្បធម៍ទូរទៅ",
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        color: Color(0xFF790303),
+                                      Text(
+                                        "វប្បធម៍ទូរទៅ",
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          color: Color(0xFF790303),
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
+
                         SizedBox(height: 5),
                       ],
                     ),
@@ -413,7 +535,7 @@ class HomePage extends StatelessWidget {
 
             Positioned(
               right: 5,
-              top: 285,
+              top: heroHeight - 200,
               child: Image.asset('./assets/images/background_logo.png'),
             ),
           ],
