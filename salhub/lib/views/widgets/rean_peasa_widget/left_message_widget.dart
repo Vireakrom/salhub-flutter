@@ -49,6 +49,7 @@ class _LeftMessageWidgetState extends State<LeftMessageWidget> {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       widget.khmerText,
