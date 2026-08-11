@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:salhub/views/widgets/back_button_widget.dart';
 import 'package:salhub/views/widgets/lomhat/lomhat_list_tile_widget.dart';
 
 class LomhatPage extends StatelessWidget {
@@ -7,12 +6,8 @@ class LomhatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-
     return Scaffold(
       appBar: AppBar(
-        leadingWidth: 100,
-        leading: BackButtonWidget(),
         backgroundColor: Colors.transparent,
         title: Text(
           "លំហាត់",
@@ -73,6 +68,7 @@ class LomhatPage extends StatelessWidget {
                 engTxt: "Level 2",
                 khTxt: "កម្រិត​ ៧",
               ),
+              SizedBox(height: 100),
             ],
           ),
         ),

@@ -29,9 +29,9 @@ class LomhatListTileWidget extends StatelessWidget {
       ),
       child: ListTile(
         tileColor: Colors.transparent,
-        title: Text('កម្រិត​ ១'),
-        subtitle: Text('Level 1'),
-        trailing: Icon(Icons.favorite_rounded),
+        title: Text(khTxt),
+        subtitle: Text(engTxt),
+        trailing: Icon(Icons.arrow_forward_ios),
       ),
     );
   }
