@@ -7,11 +7,13 @@ class LomhatListTileWidget extends StatelessWidget {
     required this.color2,
     required this.engTxt,
     required this.khTxt,
+    required this.nextPage,
   });
   final Color color1;
   final Color color2;
   final String khTxt;
   final String engTxt;
+  final Widget nextPage;
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +30,12 @@ class LomhatListTileWidget extends StatelessWidget {
         ),
       ),
       child: ListTile(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => nextPage),
+          );
+        },
         tileColor: Colors.transparent,
         title: Text(khTxt, style: TextStyle(fontSize: 20, color: Colors.black)),
         subtitle: Text(
