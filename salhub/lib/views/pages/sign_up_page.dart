@@ -14,13 +14,11 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController controllerPw = TextEditingController();
   bool hidden = true;
-
   @override
   void initState() {
     hidden = true;
     super.initState();
   }
-
   @override
   void dispose() {
     controllerEmail.dispose();
@@ -28,7 +26,6 @@ class _SignUpPageState extends State<SignUpPage> {
     controllerPw.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
