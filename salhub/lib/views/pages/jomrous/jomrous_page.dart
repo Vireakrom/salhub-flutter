@@ -31,9 +31,14 @@ class JomrousPage extends StatelessWidget {
                   "ភាសាចម្រុះ",
                   style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
                 ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
                 SizedBox(width: 10,),
                 Text(
-                  "ភាសាចម្រុះ",
+                  "General",
                   style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
                 ),
               ],
@@ -44,7 +49,7 @@ class JomrousPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Placeholder()),
+                  MaterialPageRoute(builder: (context) => VegetablePage()),
                 );
               },
               child: Center(
