@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CorrectDialogWidget extends StatelessWidget {
-  const CorrectDialogWidget({super.key, required this.nextPage});
+  const CorrectDialogWidget({
+    super.key,
+    required this.nextPage,
+    required this.isLast,
+  });
   final Widget nextPage;
+  final bool isLast;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,18 @@ class CorrectDialogWidget extends StatelessWidget {
             Text("ល្អណាស់", style: TextStyle(fontSize: 20)),
             TextButton(
               onPressed: () {
-                Navigator.pop(context);
+                if (isLast == true) {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(builder: (context) => nextPage),
+                    (route) => false,
+                  );
+                } else {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => nextPage),
+                  );
+                }
               },
               child: Text("Very Good", style: TextStyle(fontSize: 20)),
             ),
