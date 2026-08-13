@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salhub/views/pages/jomrous/fruit.dart';
 import 'package:salhub/views/pages/jomrous/vegetable.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 
@@ -90,7 +91,7 @@ class JomrousPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => VegetablePage()),
+                  MaterialPageRoute(builder: (context) => FruitPage()),
                 );
               },
               child: Container(
