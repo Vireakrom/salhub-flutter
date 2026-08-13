@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 
-class VegetablePage extends StatelessWidget {
-  const VegetablePage({super.key});
+class FruitPage extends StatelessWidget {
+  const FruitPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class VegetablePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "បន្លែ",
+                    "ផ្លែឈើ",
                     style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
                   ),
                 ],
@@ -48,7 +48,7 @@ class VegetablePage extends StatelessWidget {
                 children: [
                   SizedBox(width: 10),
                   Text(
-                    "Vegetable",
+                    "Fruit",
                     style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
                   ),
                 ],
@@ -165,7 +165,7 @@ class VegetablePage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Cabbage",
+                                "Jack fruit",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -183,59 +183,7 @@ class VegetablePage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "spaikdoa",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(height: 5),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ស្ពៃក្ដោប",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Table(
-                border: TableBorder.all(
-                  color: const Color.fromARGB(223, 171, 152, 8),
-                ),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 239, 231, 152),
-                    ),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Spinach",
+                                "phle Khnor",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -254,25 +202,7 @@ class VegetablePage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "spai khmao",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ស្ពៃខ្មៅ",
+                                "ផ្លែខ្នុរ",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -305,7 +235,26 @@ class VegetablePage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Broccoli",
+                                "Logan",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              SizedBox(height: 5),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "phle mieh",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -323,25 +272,7 @@ class VegetablePage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "bro-kho-li",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ប្រូខូលី",
+                                "ផ្លែមៀន",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -374,7 +305,7 @@ class VegetablePage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Cauliflower",
+                                "Guava",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -392,7 +323,7 @@ class VegetablePage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phka khtna",
+                                "phle trabek",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -410,7 +341,76 @@ class VegetablePage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្កាខាត់ំណា",
+                                "ផ្លែត្របែក",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Table(
+                border: TableBorder.all(
+                  color: const Color.fromARGB(223, 171, 152, 8),
+                ),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  const TableRow(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 239, 231, 152),
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Banana",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "phle chek",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "ផ្លែចេក",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
