@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:salhub/views/pages/general_culture/bonjeat_page.dart';
+import 'package:salhub/views/pages/general_culture/geography.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 
 class GeneralCulturePage extends StatelessWidget {
@@ -10,7 +12,7 @@ class GeneralCulturePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: const Color.fromARGB(0, 0, 0, 0),
         automaticallyImplyLeading: false,
         leadingWidth: 100,
         leading: BackButtonWidget(),
@@ -26,6 +28,11 @@ class GeneralCulturePage extends StatelessWidget {
                 "វប្បធម៌ទូទៅ",
                 style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
               ),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
               Text(
                 "General​ culture",
                 style: TextStyle(fontSize: 16, color: Color(0xFF790303)),
@@ -37,7 +44,7 @@ class GeneralCulturePage extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Placeholder()),
+                MaterialPageRoute(builder: (context) => GeographyPage()),
               );
             },
             child: Container(
@@ -71,7 +78,7 @@ class GeneralCulturePage extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Placeholder()),
+                MaterialPageRoute(builder: (context) => BonjeatPage()),
               );
             },
             child: Container(
