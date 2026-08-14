@@ -77,6 +77,10 @@ class QuizeWidget extends StatelessWidget {
               // One
               FilledButton(
                 style: FilledButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 15,
+                    horizontal: 15,
+                  ),
                   backgroundColor: Color(0xFF0097B5),
                   minimumSize: Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
@@ -96,6 +100,10 @@ class QuizeWidget extends StatelessWidget {
               // Two
               FilledButton(
                 style: FilledButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 15,
+                    horizontal: 15,
+                  ),
                   backgroundColor: Color(0xFFBA0303),
                   minimumSize: Size(double.infinity, 50),
 
@@ -115,6 +123,10 @@ class QuizeWidget extends StatelessWidget {
               // Three
               FilledButton(
                 style: FilledButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 15,
+                    horizontal: 15,
+                  ),
                   backgroundColor: Color(0xFF608B04),
                   minimumSize: Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(
@@ -134,6 +146,10 @@ class QuizeWidget extends StatelessWidget {
               // Four
               FilledButton(
                 style: FilledButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 15,
+                    horizontal: 15,
+                  ),
                   backgroundColor: Color(0xFFFFF700),
                   minimumSize: Size(double.infinity, 50),
                   shape: RoundedRectangleBorder(

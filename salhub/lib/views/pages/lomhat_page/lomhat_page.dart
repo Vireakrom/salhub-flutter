@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/views/widget_tree.dart';
+import 'package:salhub/views/widgets/lomhat/coming_zoon_widget.dart';
 import 'package:salhub/views/widgets/lomhat/lomhat_list_tile_widget.dart';
 import 'package:salhub/views/widgets/lomhat/quize_widget.dart';
 import 'package:salhub/views/widgets/lomhat/start_question_widget.dart';
@@ -303,7 +304,7 @@ class LomhatPage extends StatelessWidget {
                 engTxt: "Level 4",
                 khTxt: "កម្រិត​ ៤",
                 nextPage: StartQuestionWidget(
-                  level: "១",
+                  level: "៤",
                   nextPage: QuizeWidget(
                     enLevel: "4",
                     khLevel: "៤",
@@ -313,7 +314,6 @@ class LomhatPage extends StatelessWidget {
                     opTwo: ["៣១​ តួ", false],
                     opThree: ["២១​ តួ", false],
                     opFour: ["២៣​ តួ", true],
-                    isLast: true,
                     nextPage: QuizeWidget(
                       enLevel: "4",
                       khLevel: "៤",
@@ -335,8 +335,64 @@ class LomhatPage extends StatelessWidget {
                         "នាម គឺជាពាក្យសម្រាប់សម្គាល់មនុស្ស សត្វ រុក្ខជាតិ ទីកន្លែង និងវត្ថុអ្វីមួយ។ (A noun is a name of a person, animal, plant, place and thing.)",
                         true,
                       ],
-                      isLast: true,
-                      nextPage: WidgetTree(),
+                      nextPage: QuizeWidget(
+                        enLevel: "4",
+                        khLevel: "៤",
+                        enQuestion: 'Where do customers order food?',
+                        khQuestion: '៣.តើអតិថិជនបញ្ជាទិញម្ហូបនៅឯណា?',
+                        opOne: ["ភោជនីយដ្ឋាន", true],
+                        opTwo: ["សាលារៀន", false],
+                        opThree: ["មន្ទីរពេទ្យ", false],
+                        opFour: ["បណ្ណាល័យ", false],
+                        nextPage: QuizeWidget(
+                          enLevel: "4",
+                          khLevel: "៤",
+                          enQuestion:
+                              'What is the name of this fruit in Khmer?   ',
+                          khQuestion: '៤. តើផ្លែឈើខាងលើជាផ្លែអ្វី?',
+                          opOne: ["ចេក", true],
+                          opTwo: ["ស្វាយ", false],
+                          opThree: ["ល្ហុង", false],
+                          opFour: ["មៀន", false],
+                          img: './assets/images/papaya.png',
+                          nextPage: QuizeWidget(
+                            enLevel: "4",
+                            khLevel: "៤",
+                            enQuestion: 'How do you say "7 dollars" in Khmer?',
+                            khQuestion:
+                                '៥.តើនិយាយពាក្យថា "7 dollars" ជាភាសាខ្មែរយ៉ាងដូចម្ដេច?',
+                            opOne: ["៥ ដុល្លារ", false],
+                            opTwo: ["២ ដុល្លារ", false],
+                            opThree: ["៩ ដុល្លារ", false],
+                            opFour: ["៧ ដុល្លារ", true],
+                            nextPage: QuizeWidget(
+                              enLevel: "4",
+                              khLevel: "៤",
+                              enQuestion:
+                                  'What is the meaning of menu in Khmer? ',
+                              khQuestion: '៦. តើពាក្យ​ Menu ជាអ្វី?',
+                              opOne: ["បញ្ជីមុខម្ហូប", true],
+                              opTwo: ["អាហារ", false],
+                              opThree: ["បញ្ជាទិញ", false],
+                              opFour: ["បាយ", false],
+                              nextPage: QuizeWidget(
+                                enLevel: "4",
+                                khLevel: "៤",
+                                enQuestion:
+                                    'What is the name of the capital of Cambodia?',
+                                khQuestion:
+                                    '៧.តើរាជធានីនៅប្រទេសកម្ពុជាឈ្មោះអ្វី',
+                                opOne: ["រាជធានីភ្នំពេញ", true],
+                                opTwo: ["រាជធានីសៀមរាប", false],
+                                opThree: ["រាជធានីកណ្ដាល", false],
+                                opFour: ["រាជធានីបាត់ដំបង", false],
+                                isLast: true,
+                                nextPage: WidgetTree(),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -348,30 +404,322 @@ class LomhatPage extends StatelessWidget {
                 engTxt: "Level 5",
                 khTxt: "កម្រិត​ ៥",
                 nextPage: StartQuestionWidget(
-                  level: "១",
-                  nextPage: Placeholder(),
+                  level: "៥",
+                  nextPage: QuizeWidget(
+                    enLevel: "5",
+                    khLevel: "៥",
+                    enQuestion:
+                        'Can independent vowels be used as subscript consonants?  ',
+                    khQuestion: '១.​តើស្រៈពេញតួអាចយកទៅធ្វើជាជើងព្យញ្ជនៈបានទេ ?',
+                    opOne: ["បាន", false],
+                    opTwo: ["ផ្សេងៗ", false],
+                    opThree: ["មិនបាន", true],
+                    opFour: ["", false],
+
+                    nextPage: QuizeWidget(
+                      enLevel: "5",
+                      khLevel: "៥",
+                      enQuestion: 'What is an adjective? Where is it placed?',
+                      khQuestion:
+                          '២. តើគុណនាមមានន័យដូចម្ដេច? តើគុណនាមមានទីតាំងនៅឯណា?',
+                      opOne: [
+                        "គុណនាមជាពាក្យបញ្ជាក់លក្ខណៈរបស់នាមហើយមានទីតាំងនៅខាងឆ្វេងឫស្តានាម។ An adjective is a word that describes a noun.In Khmer, placed before or after the noun ",
+                        false,
+                      ],
+                      opTwo: [
+                        "គុណនាមជាពាក្យបញ្ជាក់លក្ខណៈរបស់នាមហើយមានទីតាំងនៅខាងឆ្វេងនាម។ An adjective is a word that describes a noun.In Khmer, placed before the noun.",
+                        false,
+                      ],
+                      opThree: [
+                        "គុណនាមជាពាក្យបញ្ជាក់លក្ខណៈរបស់នាមហើយមានទីតាំងនៅខាងស្តាំនាម។ An adjective is a word that describes a noun.In Khmer, placed after the noun.",
+                        true,
+                      ],
+                      opFour: ["មិនមានចម្លើយ no answer", false],
+
+                      nextPage: QuizeWidget(
+                        enLevel: "5",
+                        khLevel: "៥",
+                        enQuestion: 'What day comes before Friday?',
+                        khQuestion: '៣.តើថ្ងៃណាមកមុនថ្ងៃសុក្រ?',
+                        opOne: ["ថ្ងៃអង្គារ", false],
+                        opTwo: ["ថ្ងៃពុធ", false],
+                        opThree: ["ថ្ងៃព្រហស្បតិ៍", true],
+                        opFour: ["ថ្ងៃសៅរ៍", false],
+
+                        nextPage: QuizeWidget(
+                          enLevel: "5",
+                          khLevel: "៥",
+                          enQuestion:
+                              'What is the name of this fruit in Khmer?',
+                          khQuestion: '៤. តើផ្លែឈើខាងលើជាផ្លែអ្វី?',
+                          opOne: ["ចេក", false],
+                          opTwo: ["ស្វាយ", false],
+                          opThree: ["ល្ហុង", false],
+                          opFour: ["ប៉ោម", true],
+                          img: './assets/images/apple.png',
+                          nextPage: QuizeWidget(
+                            enLevel: "5",
+                            khLevel: "៥",
+                            enQuestion:
+                                ' What does "ការងារនេះត្រូវការបទពិសោធន៍" mean?',
+                            khQuestion:
+                                '៥."ការងារនេះត្រូវការបទពិសោធន៍" មានន័យជាអ្វី?',
+                            opOne: ["This job requires experience", true],
+                            opTwo: ["I want to quit my job", false],
+                            opThree: ["I will start school tomorrow", false],
+                            opFour: ["I don't like this company", false],
+                            nextPage: QuizeWidget(
+                              enLevel: "5",
+                              khLevel: "៥",
+                              enQuestion:
+                                  'What is the meaning of Food in Khmer? ',
+                              khQuestion: '៦. តើពាក្យ​ Food មានន័យដូចម្ដេច?',
+                              opOne: ["បញ្ជីមុខម្ហូប", false],
+                              opTwo: ["អាហារ", true],
+                              opThree: ["បញ្ជាទិញ", false],
+                              opFour: ["បាយ", false],
+                              nextPage: QuizeWidget(
+                                enLevel: "5",
+                                khLevel: "៥",
+                                enQuestion: "What is Khmer New Year's Eve?",
+                                khQuestion:
+                                    '៧.តើបុណ្យចូលឆ្នាំខ្មែរគឺជាបុណ្យអ្វី?',
+                                opOne: ["បុណ្យជាតិកូរ៉េ", false],
+                                opTwo: ["បុណ្យជាតិវៀតណាម", false],
+                                opThree: ["បុណ្យជាតិខ្មែរ", true],
+                                opFour: ["បុណ្យជាតិអឺរ៉ុប", false],
+                                isLast: true,
+                                nextPage: WidgetTree(),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 20),
               LomhatListTileWidget(
                 color1: Color(0xFF5C99FF),
                 color2: Color(0xFF001B48),
-                engTxt: "Level 2",
+                engTxt: "Level 6",
                 khTxt: "កម្រិត​ ៦",
                 nextPage: StartQuestionWidget(
-                  level: "១",
-                  nextPage: Placeholder(),
+                  level: "៦",
+                  nextPage: QuizeWidget(
+                    enLevel: "6",
+                    khLevel: "៦",
+                    enQuestion:
+                        'Which of the vowel signs in the options below is written "above" the consonant?  ',
+                    khQuestion:
+                        '១. តើសញ្ញាស្រៈណាមួយក្នុងចំណោមជម្រើសខាងក្រោម ដែលត្រូវសរសេរនៅ «ខាងលើ» ព្យញ្ជនៈ?',
+                    opOne: ["ិ", true],
+                    opTwo: ["ា", false],
+                    opThree: ["ុ", false],
+                    opFour: ["ៅ", false],
+                    nextPage: QuizeWidget(
+                      enLevel: "6",
+                      khLevel: "៦",
+                      enQuestion: 'What does the Khmer ៩ represent?',
+                      khQuestion: '២. តើលេខខ្មែរ ៩ ស្មើនឹងលេខប៉ុន្មាន?',
+                      opOne: ["6", false],
+                      opTwo: ["5", false],
+                      opThree: ["9", true],
+                      opFour: ["12", false],
+
+                      nextPage: QuizeWidget(
+                        enLevel: "6",
+                        khLevel: "៦",
+                        enQuestion: 'What are synonyms mean?',
+                        khQuestion: '៣. តើន័យដូចមានន័យដូចម្ដេច?',
+                        opOne: [
+                          "ន័យដូច គឺជាពាក្យទាំងឡាយណា ដែលមានន័យដូចឬប្រហាក់ប្រហែលគ្នាតែសំណេរ និង សំណួរពុំដូចគ្នាទេ។ Synonyms is a word that has the same meaning as another word.​",
+                          true,
+                        ],
+                        opTwo: [
+                          "ន័យដូច គឺជាពាក្យដែលមានន័យផ្ទុយគ្នា។ Synonyms are words that have opposite meanings.",
+                          false,
+                        ],
+                        opThree: [
+                          "ន័យដូច គឺជាពាក្យដែលមានសំណេរដូចគ្នា តែន័យខុសគ្នា។ Synonyms are words that are spelled the same but have different meanings.",
+                          false,
+                        ],
+                        opFour: [
+                          "ន័យដូច គឺជាពាក្យដែលប្រើសម្រាប់បញ្ជាក់លក្ខណៈរបស់នាម។ Synonyms are words used to describe the characteristics of nouns.",
+                          false,
+                        ],
+
+                        nextPage: QuizeWidget(
+                          enLevel: "6",
+                          khLevel: "៦",
+                          enQuestion: 'What is a synonym of "Mother"',
+                          khQuestion: '៤. តើន័យដូចនឹងពាក្យ "ម្តាយ" គឺអ្វី?',
+                          opOne: ["មីង", false],
+                          opTwo: ["យាយ", false],
+                          opThree: ["ប៉ា", false],
+                          opFour: ["ម៉ាក់", true],
+                          nextPage: QuizeWidget(
+                            enLevel: "6",
+                            khLevel: "៦",
+                            enQuestion:
+                                'what is the name of this fruit in Khmer?',
+                            khQuestion: '៥. តើផ្លែឈើខាងលើជាផ្លែអ្វី?',
+                            opOne: ["ចេក", false],
+                            opTwo: ["ម្នាស់", true],
+                            opThree: ["ល្ហុង", false],
+                            opFour: ["ប៉ោម", false],
+                            img: './assets/images/pineapple.png',
+                            nextPage: QuizeWidget(
+                              enLevel: "6",
+                              khLevel: "៦",
+                              enQuestion:
+                                  'What does "តើគោលដៅរបស់អ្នកគឺអ្វី?" mean?',
+                              khQuestion:
+                                  '៦. តើប្រយោគ "តើគោលដៅរបស់អ្នកគឺអ្វី?" មានន័យដូចម្ដេច?',
+                              opOne: [
+                                "What are your plans for the future?",
+                                false,
+                              ],
+                              opTwo: ["What are your goals?", true],
+                              opThree: ["What are your dreams?", false],
+                              opFour: ["I plan to learn new skills.", false],
+                              nextPage: QuizeWidget(
+                                enLevel: "6",
+                                khLevel: "៦",
+                                enQuestion:
+                                    'What are your plans for the future?',
+                                khQuestion: '៧. តើពាក្យ​ Order មានន័យដូចម្ដេច?',
+                                opOne: ["បញ្ជីមុខម្ហូប", false],
+                                opTwo: ["អាហារ", false],
+                                opThree: ["បញ្ជាទិញ", true],
+                                opFour: ["បាយ", false],
+
+                                nextPage: QuizeWidget(
+                                  enLevel: "6",
+                                  khLevel: "៦",
+                                  enQuestion:
+                                      'What is Independence Day called in Khmer?',
+                                  khQuestion:
+                                      '៨.តើបុណ្យIndependence day ហៅថាអ្វី?',
+                                  opOne: ["ទិវាពលកម្ម", false],
+                                  opTwo: ["បុណ្យឯករាជ្យជាតិ", true],
+                                  opThree: ["ពិសាខបូជា", false],
+                                  opFour: ["បុណ្យចូលឆ្នាំថ្មី", false],
+
+                                  nextPage: WidgetTree(),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 20),
               LomhatListTileWidget(
                 color1: Color(0xFFFF3C88),
                 color2: Color(0xFF731439),
-                engTxt: "Level 2",
+                engTxt: "Level 7",
                 khTxt: "កម្រិត​ ៧",
                 nextPage: StartQuestionWidget(
-                  level: "១",
-                  nextPage: Placeholder(),
+                  level: "៧",
+                  nextPage: QuizeWidget(
+                    enLevel: "6",
+                    khLevel: "៦",
+                    enQuestion:
+                        'Which owel sign is written "below" the consonant?',
+                    khQuestion:
+                        '១. តើសញ្ញាស្រៈណាមួយ ដែលត្រូវសរសេរនៅ «ខាងក្រោម» តួព្យញ្ជនៈ?',
+                    opOne: ["ី", false],
+                    opTwo: ["ូ", true],
+                    opThree: ["ល", false],
+                    opFour: ["ៀ", false],
+                    nextPage: QuizeWidget(
+                      enLevel: "6",
+                      khLevel: "៦",
+                      enQuestion: 'What is an imperative sentence?',
+                      khQuestion: '២.​តើល្បះបញ្ជាមានន័យដូចម្ដេច?',
+                      opOne: [
+                        "ល្បះបញ្ជា ជាល្បះសម្រាប់សួរសំណួរ។ An imperative sentence is a sentence used to ask questions.",
+                        false,
+                      ],
+                      opTwo: [
+                        "ល្បះបញ្ជា ជាល្បះសម្រាប់ប្រៀបធៀបមនុស្ស ឬវត្ថុពីរ។ An imperative sentence is a sentence used to compare two people or things.",
+                        false,
+                      ],
+                      opThree: [
+                        "ល្បះបញ្ជា ជាល្បះសម្រាប់ប្រើបង្គាប់ ឱ្យដំបូន្មាន ធ្វើសំណូមពរ និងអង្វរករ។ An imperative sentence is a sentence that gives a command, makes a request, gives instructions, or offers advice.",
+                        true,
+                      ],
+                      opFour: [
+                        "ល្បះបញ្ជា ជាល្បះសម្រាប់ប្រាប់ព័ត៌មាន ឬពិពណ៌នាអំពីអ្វីមួយ។ An imperative sentence is a sentence used to state facts or describe something.",
+                        false,
+                      ],
+                      nextPage: QuizeWidget(
+                        enLevel: "6",
+                        khLevel: "៦",
+                        enQuestion: 'Which sentence shows a future plan?',
+                        khQuestion: '៧.តើប្រយោគណាមួយបង្ហាញពីផែនការនាពេលអនាគត? ',
+                        opOne: ["ខ្ញុំញ៉ាំបាយរាល់ថ្ងៃ។", false],
+                        opTwo: ["ខ្ញុំចង់រៀនភាសាចិននៅឆ្នាំក្រោយ", true],
+                        opThree: ["ខ្ញុំកំពុងមើលទូរទស្សន៍។", false],
+                        opFour: ["ខ្ញុំចូលចិត្តផ្លែឈើ។", false],
+                        nextPage: QuizeWidget(
+                          enLevel: "6",
+                          khLevel: "៦",
+                          enQuestion: 'Which two days are the weekend?',
+                          khQuestion: '៤.តើថ្ងៃពីរណាដែលជាថ្ងៃចុងសប្ដាហ៍?',
+                          opOne: ["ថ្ងៃចន្ទ និងថ្ងៃអង្គារ", false],
+                          opTwo: [" ថ្ងៃពុធ និងថ្ងៃព្រហស្បតិ៍", false],
+                          opThree: [" ថ្ងៃសៅរ៍ និងថ្ងៃអាទិត្យ", true],
+                          opFour: ["ថ្ងៃព្រហស្បតិ៍ និងថ្ងៃសុក្រ", false],
+                          nextPage: QuizeWidget(
+                            enLevel: "6",
+                            khLevel: "៦",
+                            enQuestion:
+                                'What is the name of this fruit in Khmer?   ',
+                            khQuestion: '៥. តើផ្លែឈើខាងលើជាផ្លែអ្វី?',
+                            opOne: ["ចេក", false],
+                            opTwo: ["ម្នាស់", false],
+                            opThree: ["ឪឡឹក", true],
+                            opFour: ["ប៉ោម", false],
+                            img: './assets/images/watermelon.png',
+
+                            nextPage: QuizeWidget(
+                              enLevel: "6",
+                              khLevel: "៦",
+                              enQuestion:
+                                  'What is the image called in Khmer?   ',
+                              khQuestion: '៦. តើរូបខាងលើជាអ្វី?',
+                              opOne: ["ចេក", false],
+                              opTwo: ["ម្នាស់", false],
+                              opThree: ["ទឹក", false],
+                              opFour: ["បាយ", true],
+                              img: './assets/images/rice.png',
+
+                              nextPage: QuizeWidget(
+                                enLevel: "6",
+                                khLevel: "៦",
+                                enQuestion:
+                                    'What is khmer new year day sound in Khmer?',
+                                khQuestion:
+                                    '៧.តើបុណ្យ khmer New year ហៅថាអ្វី?',
+                                opOne: ["bon chol chnam thmey", true],
+                                opTwo: ["bon ekreach cheat", false],
+                                opThree: ["Tuva Roth Tammanh", false],
+                                opFour: ["bon Phchum Ben", false],
+                                isLast: true,
+                                nextPage: WidgetTree(),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
               SizedBox(height: 20),
@@ -379,11 +727,8 @@ class LomhatPage extends StatelessWidget {
                 color1: Color(0xFFB8F8FE),
                 color2: Color(0xFF003C42),
                 engTxt: "Coming soon",
-                khTxt: "Level 9",
-                nextPage: StartQuestionWidget(
-                  level: "១",
-                  nextPage: Placeholder(),
-                ),
+                khTxt: "Level 8",
+                nextPage: ComingZoonWidget(),
               ),
               SizedBox(height: 20),
               LomhatListTileWidget(
@@ -391,7 +736,7 @@ class LomhatPage extends StatelessWidget {
                 color2: Color(0xFFB9B306),
                 engTxt: "Coming soon",
                 khTxt: "Level 9",
-                nextPage: Placeholder(),
+                nextPage: ComingZoonWidget(),
               ),
               SizedBox(height: 100),
             ],
