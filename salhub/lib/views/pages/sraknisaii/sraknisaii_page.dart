@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:salhub/views/pages/sraknisaii/sraknisaii_one_page.dart';
+import 'package:salhub/views/pages/sraknisaii/sraknisaii_three_page.dart';
+import 'package:salhub/views/pages/sraknisaii/sraknisaii_two_page.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 import 'package:salhub/views/widgets/level_widget.dart';
+import 'package:salhub/views/widgets/sraknisaii_widget.dart';
 
 class SraknisaiiPage extends StatelessWidget {
   const SraknisaiiPage({super.key});
@@ -15,7 +19,7 @@ class SraknisaiiPage extends StatelessWidget {
         leading: BackButtonWidget(),
         title: Text(
           "រៀនអក្សរខ្មែរ ",
-          style: TextStyle(fontSize: 25, color: Color(0xFFFFF3B1)),
+          style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
 
         ),
         centerTitle: true,
@@ -25,7 +29,7 @@ class SraknisaiiPage extends StatelessWidget {
           padding: const EdgeInsets.all(15.0),
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/image/sc_background.png'),
+              image: AssetImage('./assets/images/sc_background.png'),
               fit:BoxFit.contain,
               colorFilter: ColorFilter.mode(
                 Colors.white.withValues(alpha: 0.1),
@@ -44,20 +48,17 @@ class SraknisaiiPage extends StatelessWidget {
                 mainAxisSpacing: 50,
                 crossAxisCount: 2,
                 children: <Widget>[
-                  LevelWidget(
+                  SrakNisaiiWidget(
                     title: "ព្យញ្ជនៈ",
-                    description: "",
-                    nextPage: Placeholder(),
+                    nextPage: SraknisaiiOnePage(),
                   ),
-                  LevelWidget(
+                  SrakNisaiiWidget(
                     title: "ស្រះនិស្យ័យ",
-                    description: "",
-                    nextPage: Placeholder(),
+                    nextPage: SraknisaiiTwoPage(),
                   ),
-                  LevelWidget(
+                  SrakNisaiiWidget(
                     title: "ស្រះពេញតួរ",
-                    description: "",
-                    nextPage: Placeholder(),
+                    nextPage: SraknisaiiThreePage(),
                   ),
                 ]
               ),
