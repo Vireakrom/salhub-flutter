@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 
-
-class FruitPage extends StatelessWidget {
-  const FruitPage({super.key});
+class ColorPage extends StatelessWidget {
+  const ColorPage({super.key});
 
   @override
   Widget build(BuildContext context) {
 
-
-    return Scaffold(
+return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
@@ -17,17 +15,21 @@ class FruitPage extends StatelessWidget {
         leading: BackButtonWidget(),
         centerTitle: true,
       ),
+      
 
       body: SingleChildScrollView(
+        
         padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 30),
         child: Container(
 
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/home_background.jpg'),
-              fit: BoxFit.contain,
+              image: AssetImage('assets/images/sc_background'),
+              fit: BoxFit.cover,
+
               colorFilter: ColorFilter.mode(
-                Colors.white.withValues(alpha: 0.1),
+                
+                Colors.white.withValues(alpha: 0.6),
                 BlendMode.dstATop,
               ),
             ),
@@ -39,7 +41,7 @@ class FruitPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "ផ្លែឈើ",
+                    "ពណ៏",
                     style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
                   ),
                 ],
@@ -49,7 +51,7 @@ class FruitPage extends StatelessWidget {
                 children: [
                   SizedBox(width: 10),
                   Text(
-                    "Fruit",
+                    "Colors",
                     style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
                   ),
                 ],
@@ -166,7 +168,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Jack fruit",
+                                "Red",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -184,59 +186,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle Khnor",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(height: 5),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែខ្នុរ",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Table(
-                border: TableBorder.all(
-                  color: const Color.fromARGB(223, 171, 152, 8),
-                ),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 239, 231, 152),
-                    ),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Logan",
+                                "Krom hom",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -255,25 +205,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle mieh",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែមៀន",
+                                "ក្រហម",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -306,7 +238,26 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Guava",
+                                "Blue",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              SizedBox(height: 5),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Khiev",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -324,94 +275,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle trabek",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែត្របែក",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Table(
-                border: TableBorder.all(
-                  color: const Color.fromARGB(223, 171, 152, 8),
-                ),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 239, 231, 152),
-                    ),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Banana",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "phle chek",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែចេក",
+                                "ខៀវ",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -444,7 +308,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Mango",
+                                "Green",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -462,7 +326,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle svay",
+                                "bai-tong",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -480,76 +344,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែស្វាយ",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Table(
-                border: TableBorder.all(
-                  color: const Color.fromARGB(223, 171, 152, 8),
-                ),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 239, 231, 152),
-                    ),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Pineapple",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "phle mneasa",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែម្នាស់",
+                                "បៃតង",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -582,7 +377,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Watermelom",
+                                "Yellow",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -600,7 +395,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle auloek",
+                                "luerng",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -618,204 +413,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែឪឡឹក",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Table(
-                    border: TableBorder.all(color: const Color.fromARGB(223, 171, 152, 8),),
-                    defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                    children: [
-                      const TableRow(
-                        decoration: BoxDecoration(
-                          color:  Color.fromARGB(255, 239, 231, 152),
-                        ),
-                        children: [
-                          TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: Column(
-                                children: [
-                                  Text("Dourain",
-                                  style: TextStyle(
-                                    fontSize: 21,
-                                    color: Color(0xFFF6d3f21),
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: Column(
-                                children: [
-                                  Text("phle thu ren",
-                                  style: TextStyle(
-                                    fontSize: 21,
-                                    color: Color(0xFFF6d3f21),
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: Column(
-                                children: [
-                                  Text("ផ្លែធុរេន",
-                                  style: TextStyle(
-                                    fontSize: 21,
-                                    color: Color(0xFFF6d3f21),
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ]
-                  )
-                ],
-              ),
-              Table(
-                    border: TableBorder.all(color: const Color.fromARGB(223, 171, 152, 8),),
-                    defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                    children: [
-                      const TableRow(
-                        decoration: BoxDecoration(
-                          color:  Color.fromARGB(255, 239, 231, 152),
-                        ),
-                        children: [
-                          TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: Column(
-                                children: [
-                                  Text("Coconut",
-                                  style: TextStyle(
-                                    fontSize: 21,
-                                    color: Color(0xFFF6d3f21),
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: Column(
-                                children: [
-                                  Text("phle daung",
-                                  style: TextStyle(
-                                    fontSize: 21,
-                                    color: Color(0xFFF6d3f21),
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                            verticalAlignment: TableCellVerticalAlignment.middle,
-                            child: Padding(
-                              padding: EdgeInsets.all(15.0),
-                              child: Column(
-                                children: [
-                                  Text("ផ្លែដូង",
-                                  style: TextStyle(
-                                    fontSize: 21,
-                                    color: Color(0xFFF6d3f21),
-                                  ),
-                                  textAlign: TextAlign.center,
-                                  ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ]
-                  )
-                ],
-              ),
-              Table(
-                border: TableBorder.all(
-                  color: const Color.fromARGB(223, 171, 152, 8),
-                ),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 239, 231, 152),
-                    ),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Apple",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "phle baom",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែប៉ោម",
+                                "លឿង",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -866,7 +464,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle Krauch",
+                                "tuk-kroch",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -884,76 +482,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែក្រូច",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Table(
-                border: TableBorder.all(
-                  color: const Color.fromARGB(223, 171, 152, 8),
-                ),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 239, 231, 152),
-                    ),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Lychee",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "phle koulen",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែគូលែន",
+                                "ទឹកក្រូច",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -986,7 +515,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Pear",
+                                "Pink",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1004,7 +533,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle sari",
+                                "phka-chuk",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1022,7 +551,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែសារី",
+                                "ផ្កាឈូក",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1055,7 +584,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "fig",
+                                "Purple",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1073,7 +602,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phlea lvea",
+                                "Svay",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1091,7 +620,411 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែល្វា",
+                                "ស្វាយ",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Table(
+                    border: TableBorder.all(color: const Color.fromARGB(223, 171, 152, 8),),
+                    defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                    children: [
+                      const TableRow(
+                        decoration: BoxDecoration(
+                          color:  Color.fromARGB(255, 239, 231, 152),
+                        ),
+                        children: [
+                          TableCell(
+                            verticalAlignment: TableCellVerticalAlignment.middle,
+                            child: Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: Column(
+                                children: [
+                                  Text("Black",
+                                  style: TextStyle(
+                                    fontSize: 21,
+                                    color: Color(0xFFF6d3f21),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                            verticalAlignment: TableCellVerticalAlignment.middle,
+                            child: Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: Column(
+                                children: [
+                                  Text("Khmav",
+                                  style: TextStyle(
+                                    fontSize: 21,
+                                    color: Color(0xFFF6d3f21),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                            verticalAlignment: TableCellVerticalAlignment.middle,
+                            child: Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: Column(
+                                children: [
+                                  Text("ខ្មៅ",
+                                  style: TextStyle(
+                                    fontSize: 21,
+                                    color: Color(0xFFF6d3f21),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ]
+                  )
+                ],
+              ),
+              Table(
+                    border: TableBorder.all(color: const Color.fromARGB(223, 171, 152, 8),),
+                    defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                    children: [
+                      const TableRow(
+                        decoration: BoxDecoration(
+                          color:  Color.fromARGB(255, 239, 231, 152),
+                        ),
+                        children: [
+                          TableCell(
+                            verticalAlignment: TableCellVerticalAlignment.middle,
+                            child: Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: Column(
+                                children: [
+                                  Text("White",
+                                  style: TextStyle(
+                                    fontSize: 21,
+                                    color: Color(0xFFF6d3f21),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                            verticalAlignment: TableCellVerticalAlignment.middle,
+                            child: Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: Column(
+                                children: [
+                                  Text("sor",
+                                  style: TextStyle(
+                                    fontSize: 21,
+                                    color: Color(0xFFF6d3f21),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                            verticalAlignment: TableCellVerticalAlignment.middle,
+                            child: Padding(
+                              padding: EdgeInsets.all(15.0),
+                              child: Column(
+                                children: [
+                                  Text("ស",
+                                  style: TextStyle(
+                                    fontSize: 24,
+                                    color: Color(0xFFF6d3f21),
+                                  ),
+                                  textAlign: TextAlign.center,
+                                  ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ]
+                  )
+                ],
+              ),
+              Table(
+                border: TableBorder.all(
+                  color: const Color.fromARGB(223, 171, 152, 8),
+                ),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  const TableRow(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 239, 231, 152),
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Graye",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "preh-pheh",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "ប្រផេះ",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Table(
+                border: TableBorder.all(
+                  color: const Color.fromARGB(223, 171, 152, 8),
+                ),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  const TableRow(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 239, 231, 152),
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Brown",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "tnoat",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "ត្នោត",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Table(
+                border: TableBorder.all(
+                  color: const Color.fromARGB(223, 171, 152, 8),
+                ),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  const TableRow(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 239, 231, 152),
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Gold",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "meas",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "មាស",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Table(
+                border: TableBorder.all(
+                  color: const Color.fromARGB(223, 171, 152, 8),
+                ),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  const TableRow(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 239, 231, 152),
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Siliver",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "brak",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "ប្រាក់",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1109,6 +1042,7 @@ class FruitPage extends StatelessWidget {
             ],
           ),
         ),
+        
       ),
     );
   }
