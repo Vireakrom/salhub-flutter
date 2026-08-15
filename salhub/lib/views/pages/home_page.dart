@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/views/pages/general_culture/general_culture_page.dart';
 import 'package:salhub/views/pages/jomrous/jomrous_page.dart';
+import 'package:salhub/views/pages/numeric/numeric_page.dart';
 import 'package:salhub/views/pages/rean_peasa/rean_peasa_page.dart';
 import 'package:salhub/views/pages/sraknisaii/sraknisaii_page.dart';
 
@@ -11,8 +12,6 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-
-    // Define a shared height for your hero section so everything scales together
     double heroHeight = screenHeight * 0.7;
     return Scaffold(
       body: SingleChildScrollView(
@@ -184,7 +183,7 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ReanPeasaPage(),
+                                builder: (context) => NumericPage(),
                               ),
                             );
                           },
