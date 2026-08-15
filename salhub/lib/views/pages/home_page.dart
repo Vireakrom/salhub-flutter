@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/views/pages/general_culture/general_culture_page.dart';
+import 'package:salhub/views/pages/grammar/grammar_page.dart';
 import 'package:salhub/views/pages/jomrous/jomrous_page.dart';
 import 'package:salhub/views/pages/rean_peasa/rean_peasa_page.dart';
 import 'package:salhub/views/pages/sraknisaii/sraknisaii_page.dart';
@@ -275,7 +276,7 @@ class HomePage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ReanPeasaPage(),
+                                builder: (context) => GrammarPage(),
                               ),
                             );
                           },
