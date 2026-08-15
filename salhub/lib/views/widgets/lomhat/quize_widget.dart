@@ -62,110 +62,112 @@ class QuizeWidget extends StatelessWidget {
         leading: BackButtonWidget(),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              Text("កម្រិត $khLevel", style: TextStyle(fontSize: 20)),
-              Text("Level $enLevel", style: TextStyle(fontSize: 20)),
-              SizedBox(height: 20),
-              showImg(),
-              Text(khQuestion, style: TextStyle(fontSize: 24)),
-              Text(enQuestion, style: TextStyle(fontSize: 15)),
-              SizedBox(height: 50),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                Text("កម្រិត $khLevel", style: TextStyle(fontSize: 20)),
+                Text("Level $enLevel", style: TextStyle(fontSize: 20)),
+                SizedBox(height: 20),
+                showImg(),
+                Text(khQuestion, style: TextStyle(fontSize: 24)),
+                Text(enQuestion, style: TextStyle(fontSize: 15)),
+                SizedBox(height: 50),
 
-              // One
-              FilledButton(
-                style: FilledButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15,
-                    horizontal: 15,
+                // One
+                FilledButton(
+                  style: FilledButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
+                      horizontal: 15,
+                    ),
+                    backgroundColor: Color(0xFF0097B5),
+                    minimumSize: Size(double.infinity, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
                   ),
-                  backgroundColor: Color(0xFF0097B5),
-                  minimumSize: Size(double.infinity, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                  onPressed: () {
+                    clickAnswer(opOne[1]);
+                  },
+                  child: Text(
+                    opOne[0],
+                    style: TextStyle(color: Color(0xFF000000), fontSize: 30),
                   ),
                 ),
-                onPressed: () {
-                  clickAnswer(opOne[1]);
-                },
-                child: Text(
-                  opOne[0],
-                  style: TextStyle(color: Color(0xFF000000), fontSize: 30),
-                ),
-              ),
-              SizedBox(height: 10),
+                SizedBox(height: 10),
 
-              // Two
-              FilledButton(
-                style: FilledButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15,
-                    horizontal: 15,
-                  ),
-                  backgroundColor: Color(0xFFBA0303),
-                  minimumSize: Size(double.infinity, 50),
+                // Two
+                FilledButton(
+                  style: FilledButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
+                      horizontal: 15,
+                    ),
+                    backgroundColor: Color(0xFFBA0303),
+                    minimumSize: Size(double.infinity, 50),
 
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                  ),
+                  onPressed: () {
+                    clickAnswer(opTwo[1]);
+                  },
+                  child: Text(
+                    opTwo[0],
+                    style: TextStyle(color: Color(0xFF000000), fontSize: 30),
                   ),
                 ),
-                onPressed: () {
-                  clickAnswer(opTwo[1]);
-                },
-                child: Text(
-                  opTwo[0],
-                  style: TextStyle(color: Color(0xFF000000), fontSize: 30),
-                ),
-              ),
-              SizedBox(height: 10),
-              // Three
-              FilledButton(
-                style: FilledButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15,
-                    horizontal: 15,
+                SizedBox(height: 10),
+                // Three
+                FilledButton(
+                  style: FilledButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
+                      horizontal: 15,
+                    ),
+                    backgroundColor: Color(0xFF608B04),
+                    minimumSize: Size(double.infinity, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
                   ),
-                  backgroundColor: Color(0xFF608B04),
-                  minimumSize: Size(double.infinity, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                  onPressed: () {
+                    clickAnswer(opThree[1]);
+                  },
+                  child: Text(
+                    opThree[0],
+                    style: TextStyle(color: Color(0xFF000000), fontSize: 30),
                   ),
                 ),
-                onPressed: () {
-                  clickAnswer(opThree[1]);
-                },
-                child: Text(
-                  opThree[0],
-                  style: TextStyle(color: Color(0xFF000000), fontSize: 30),
-                ),
-              ),
-              SizedBox(height: 10),
+                SizedBox(height: 10),
 
-              // Four
-              FilledButton(
-                style: FilledButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 15,
-                    horizontal: 15,
+                // Four
+                FilledButton(
+                  style: FilledButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 15,
+                      horizontal: 15,
+                    ),
+                    backgroundColor: Color(0xFFFFF700),
+                    minimumSize: Size(double.infinity, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
                   ),
-                  backgroundColor: Color(0xFFFFF700),
-                  minimumSize: Size(double.infinity, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15.0),
+                  onPressed: () {
+                    clickAnswer(opFour[1]);
+                  },
+                  child: Text(
+                    opFour[0],
+                    style: TextStyle(color: Color(0xFF000000), fontSize: 30),
                   ),
                 ),
-                onPressed: () {
-                  clickAnswer(opFour[1]);
-                },
-                child: Text(
-                  opFour[0],
-                  style: TextStyle(color: Color(0xFF000000), fontSize: 30),
-                ),
-              ),
-              SizedBox(height: 10),
-            ],
+                SizedBox(height: 10),
+              ],
+            ),
           ),
         ),
       ),

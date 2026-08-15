@@ -312,7 +312,7 @@ class LomhatPage extends StatelessWidget {
                     khQuestion: '១. តើស្រៈនិស្ស័យមានចំនួនប៉ុន្មាន?',
                     opOne: ["២១​ តួ", false],
                     opTwo: ["៣១​ តួ", false],
-                    opThree: ["២១​ តួ", false],
+                    opThree: ["២៥ តួ", false],
                     opFour: ["២៣​ តួ", true],
                     nextPage: QuizeWidget(
                       enLevel: "4",
@@ -350,9 +350,9 @@ class LomhatPage extends StatelessWidget {
                           enQuestion:
                               'What is the name of this fruit in Khmer?   ',
                           khQuestion: '៤. តើផ្លែឈើខាងលើជាផ្លែអ្វី?',
-                          opOne: ["ចេក", true],
+                          opOne: ["ចេក", false],
                           opTwo: ["ស្វាយ", false],
-                          opThree: ["ល្ហុង", false],
+                          opThree: ["ល្ហុង", true],
                           opFour: ["មៀន", false],
                           img: './assets/images/papaya.png',
                           nextPage: QuizeWidget(

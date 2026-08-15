@@ -10,7 +10,7 @@ class SettingPage extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 50,
-            backgroundImage: AssetImage("assets/images/coconut.png]"),
+            backgroundImage: AssetImage("assets/images/profile.png]"),
           ),
         ],
       ),
