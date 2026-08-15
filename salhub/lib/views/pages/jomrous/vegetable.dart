@@ -23,10 +23,12 @@ class VegetablePage extends StatelessWidget {
 
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/sc_background.png'),
-              fit: BoxFit.contain,
+              image: AssetImage('assets/images/sc_background'),
+              fit: BoxFit.cover,
+
               colorFilter: ColorFilter.mode(
-                Colors.white.withValues(alpha: 0.1),
+                
+                Colors.white.withValues(alpha: 0.6),
                 BlendMode.dstATop,
               ),
             ),

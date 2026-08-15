@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:salhub/views/pages/jomrous/color.dart';
 import 'package:salhub/views/pages/jomrous/fruit.dart';
+import 'package:salhub/views/pages/jomrous/house.dart';
+import 'package:salhub/views/pages/jomrous/restaurant.dart';
+import 'package:salhub/views/pages/jomrous/sports.dart';
 import 'package:salhub/views/pages/jomrous/vegetable.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 
@@ -131,7 +135,7 @@ class JomrousPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Placeholder()),
+                  MaterialPageRoute(builder: (context) => Sports()),
                 );
               },
               child: Container(
@@ -148,14 +152,14 @@ class JomrousPage extends StatelessWidget {
                 
                     children: [
                       Text(
-                        "ពណ៏",
+                        "កីឡា",
                         style: TextStyle(
                           fontSize: 24,
                           color: Color(0xFF790303),
                         ),
                       ),
                       Text(
-                        "Colors",
+                        "Sports",
                         style: TextStyle(
                           fontSize: 16,
                           color: Color(0xFF790303),
@@ -171,7 +175,7 @@ class JomrousPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Placeholder()),
+                  MaterialPageRoute(builder: (context) => HousePage()),
                 );
               },
               child: Container(
@@ -211,7 +215,7 @@ class JomrousPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Placeholder()),
+                  MaterialPageRoute(builder: (context) => RestaurantPage()),
                 );
               },
               child: Container(
@@ -291,7 +295,7 @@ class JomrousPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Placeholder()),
+                  MaterialPageRoute(builder: (context) => ColorPage()),
                 );
               },
               child: Container(

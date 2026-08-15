@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 
-
-class FruitPage extends StatelessWidget {
-  const FruitPage({super.key});
+class Sports extends StatelessWidget {
+  const Sports({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +23,12 @@ class FruitPage extends StatelessWidget {
 
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/home_background.jpg'),
-              fit: BoxFit.contain,
+              image: AssetImage('assets/images/sc_background'),
+              fit: BoxFit.cover,
+
               colorFilter: ColorFilter.mode(
-                Colors.white.withValues(alpha: 0.1),
+                
+                Colors.white.withValues(alpha: 0.6),
                 BlendMode.dstATop,
               ),
             ),
@@ -39,7 +40,7 @@ class FruitPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "ផ្លែឈើ",
+                    "កីឡា",
                     style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
                   ),
                 ],
@@ -49,7 +50,7 @@ class FruitPage extends StatelessWidget {
                 children: [
                   SizedBox(width: 10),
                   Text(
-                    "Fruit",
+                    "Sports",
                     style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
                   ),
                 ],
@@ -166,7 +167,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Jack fruit",
+                                "Football",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -184,59 +185,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle Khnor",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                              SizedBox(height: 5),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែខ្នុរ",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Table(
-                border: TableBorder.all(
-                  color: const Color.fromARGB(223, 171, 152, 8),
-                ),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 239, 231, 152),
-                    ),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Logan",
+                                "Bal Teat",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -255,25 +204,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle mieh",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែមៀន",
+                                "បាលទាត់",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -306,7 +237,26 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Guava",
+                                "Basketball",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              SizedBox(height: 5),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Bal Boh",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -324,94 +274,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle trabek",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែត្របែក",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Table(
-                border: TableBorder.all(
-                  color: const Color.fromARGB(223, 171, 152, 8),
-                ),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 239, 231, 152),
-                    ),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Banana",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "phle chek",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែចេក",
+                                "បាល់បោះ",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -444,7 +307,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Mango",
+                                "Tennis",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -462,7 +325,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle svay",
+                                "Ten nis",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -480,76 +343,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែស្វាយ",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Table(
-                border: TableBorder.all(
-                  color: const Color.fromARGB(223, 171, 152, 8),
-                ),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 239, 231, 152),
-                    ),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Pineapple",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "phle mneasa",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែម្នាស់",
+                                "វាយគិន្នីស",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -582,7 +376,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Watermelom",
+                                "Volleyball",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -600,7 +394,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle auloek",
+                                "Bal Toah",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -618,7 +412,214 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែឪឡឹក",
+                                "បាល់ទះ",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Table(
+                border: TableBorder.all(
+                  color: const Color.fromARGB(223, 171, 152, 8),
+                ),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  const TableRow(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 239, 231, 152),
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Badminton",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Vai sei",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "វាយសី",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Table(
+                border: TableBorder.all(
+                  color: const Color.fromARGB(223, 171, 152, 8),
+                ),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  const TableRow(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 239, 231, 152),
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Swimming",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Hel Tuk",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "ហែលទឹក",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Table(
+                border: TableBorder.all(
+                  color: const Color.fromARGB(223, 171, 152, 8),
+                ),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  const TableRow(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 239, 231, 152),
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Boxing",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Pradal",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "ប្រដាល់",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -648,7 +649,7 @@ class FruitPage extends StatelessWidget {
                               padding: EdgeInsets.all(15.0),
                               child: Column(
                                 children: [
-                                  Text("Dourain",
+                                  Text("Running",
                                   style: TextStyle(
                                     fontSize: 21,
                                     color: Color(0xFFF6d3f21),
@@ -665,7 +666,7 @@ class FruitPage extends StatelessWidget {
                               padding: EdgeInsets.all(15.0),
                               child: Column(
                                 children: [
-                                  Text("phle thu ren",
+                                  Text("Rot",
                                   style: TextStyle(
                                     fontSize: 21,
                                     color: Color(0xFFF6d3f21),
@@ -682,7 +683,7 @@ class FruitPage extends StatelessWidget {
                               padding: EdgeInsets.all(15.0),
                               child: Column(
                                 children: [
-                                  Text("ផ្លែធុរេន",
+                                  Text("រត់",
                                   style: TextStyle(
                                     fontSize: 21,
                                     color: Color(0xFFF6d3f21),
@@ -712,7 +713,7 @@ class FruitPage extends StatelessWidget {
                               padding: EdgeInsets.all(15.0),
                               child: Column(
                                 children: [
-                                  Text("Coconut",
+                                  Text("Cycling",
                                   style: TextStyle(
                                     fontSize: 21,
                                     color: Color(0xFFF6d3f21),
@@ -729,7 +730,7 @@ class FruitPage extends StatelessWidget {
                               padding: EdgeInsets.all(15.0),
                               child: Column(
                                 children: [
-                                  Text("phle daung",
+                                  Text("jih kong",
                                   style: TextStyle(
                                     fontSize: 21,
                                     color: Color(0xFFF6d3f21),
@@ -746,9 +747,9 @@ class FruitPage extends StatelessWidget {
                               padding: EdgeInsets.all(15.0),
                               child: Column(
                                 children: [
-                                  Text("ផ្លែដូង",
+                                  Text("ជិះកង់",
                                   style: TextStyle(
-                                    fontSize: 21,
+                                    fontSize: 24,
                                     color: Color(0xFFF6d3f21),
                                   ),
                                   textAlign: TextAlign.center,
@@ -779,7 +780,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Apple",
+                                "Karate",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -797,7 +798,58 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle baom",
+                                "Karate",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "ការ៉ាតេ",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Table(
+                border: TableBorder.all(
+                  color: const Color.fromARGB(223, 171, 152, 8),
+                ),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  const TableRow(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 239, 231, 152),
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Wrestling",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -815,7 +867,94 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែប៉ោម",
+                                "Chambab",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "ចំបាប់",
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              Table(
+                border: TableBorder.all(
+                  color: const Color.fromARGB(223, 171, 152, 8),
+                ),
+                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+                children: [
+                  const TableRow(
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 239, 231, 152),
+                    ),
+                    children: [
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Judo",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "khu do",
+                                style: TextStyle(
+                                  fontSize: 21,
+                                  color: Color(0xFFF6d3f21),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      TableCell(
+                        verticalAlignment: TableCellVerticalAlignment.middle,
+                        child: Padding(
+                          padding: EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              Text(
+                                "ឃូដូ",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -848,7 +987,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Orange",
+                                "Baseball",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -866,7 +1005,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle Krauch",
+                                "Besbol",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -884,76 +1023,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែក្រូច",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              Table(
-                border: TableBorder.all(
-                  color: const Color.fromARGB(223, 171, 152, 8),
-                ),
-                defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-                children: [
-                  const TableRow(
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 239, 231, 152),
-                    ),
-                    children: [
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "Lychee",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "phle koulen",
-                                style: TextStyle(
-                                  fontSize: 21,
-                                  color: Color(0xFFF6d3f21),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        verticalAlignment: TableCellVerticalAlignment.middle,
-                        child: Padding(
-                          padding: EdgeInsets.all(15.0),
-                          child: Column(
-                            children: [
-                              Text(
-                                "ផ្លែគូលែន",
+                                "បេសស្បល",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -986,7 +1056,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "Pear",
+                                "Skiing",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1004,7 +1074,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phle sari",
+                                "jih ski",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1022,7 +1092,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែសារី",
+                                "ជិះស្គី",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1055,7 +1125,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "fig",
+                                "Archery",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1073,7 +1143,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "phlea lvea",
+                                "Banh thnour",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1091,7 +1161,7 @@ class FruitPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ផ្លែល្វា",
+                                "បាញ់ធ្នូរ",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
