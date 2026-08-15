@@ -31,6 +31,7 @@ class JomrousPage extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              
               children: [
                 Text(
                   "ភាសាចម្រុះ",

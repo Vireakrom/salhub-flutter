@@ -7,8 +7,7 @@ class ColorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-
-    return Scaffold(
+return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
@@ -16,8 +15,10 @@ class ColorPage extends StatelessWidget {
         leading: BackButtonWidget(),
         centerTitle: true,
       ),
+      
 
       body: SingleChildScrollView(
+        
         padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 30),
         child: Container(
 
@@ -1041,6 +1042,7 @@ class ColorPage extends StatelessWidget {
             ],
           ),
         ),
+        
       ),
     );
   }
