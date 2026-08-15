@@ -34,7 +34,7 @@ class TimePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "ពេវេលា",
+                    "ពេលវេលា",
                     style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
                   ),
                 ],
