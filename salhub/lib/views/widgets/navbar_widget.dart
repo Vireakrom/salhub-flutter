@@ -28,13 +28,8 @@ class NavbarWidget extends StatelessWidget {
             children: [
               _buildNavItem(Icons.home, "ទំព័រដើម", 0, selectedPage),
               _buildNavItem(Icons.assignment, "លំហាត់", 1, selectedPage),
-              _buildNavItem(
-                Icons.bar_chart_outlined,
-                "របាយការណ៏",
-                2,
-                selectedPage,
-              ),
-              _buildNavItem(Icons.person, "ខ្ញុំ", 3, selectedPage),
+              _buildNavItem(Icons.info, "អំពីយើង", 2, selectedPage),
+              _buildNavItem(Icons.settings, "ការកំណត់", 3, selectedPage),
             ],
           ),
         );
