@@ -3,6 +3,7 @@ import 'package:salhub/views/pages/grammar/grammar_lesson1.dart';
 import 'package:salhub/views/pages/grammar/grammar_lesson2.dart';
 import 'package:salhub/views/pages/grammar/grammar_lesson3.dart';
 import 'package:salhub/views/pages/grammar/grammar_lesson4.dart';
+import 'package:salhub/views/pages/grammar/grammar_lesson5.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 import 'package:salhub/views/widgets/grammar/grmmar_card_widget.dart';
 import 'package:salhub/views/widgets/level_widget.dart';
@@ -76,7 +77,7 @@ class GrammarPage extends StatelessWidget {
                   GrammarCardWidget(
                       title: "កម្រិត ៥",
                       description: "Level 5",
-                      nextPage: GrammarPage(),
+                      nextPage: GrammarLesson5(),
                   ),
                 ],
               ),

@@ -1023,7 +1023,7 @@ class RestaurantPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "ចង្កឺះ",
+                                "ចង្កឹះ",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),

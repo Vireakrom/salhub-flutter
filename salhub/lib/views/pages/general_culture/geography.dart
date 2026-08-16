@@ -1026,7 +1026,7 @@ class GeographyPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "កំពុងចាម",
+                                "កំពង់ចាម",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1095,7 +1095,7 @@ class GeographyPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "កំពុងស្ពឺ",
+                                "កំពង់ស្ពឺ",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),
@@ -1164,7 +1164,7 @@ class GeographyPage extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                "កំពុងធំ",
+                                "កំពង់ធំ",
                                 style: TextStyle(
                                   fontSize: 21,
                                   color: Color(0xFFF6d3f21),

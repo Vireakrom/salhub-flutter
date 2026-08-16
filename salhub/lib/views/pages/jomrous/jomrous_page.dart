@@ -4,6 +4,7 @@ import 'package:salhub/views/pages/jomrous/fruit.dart';
 import 'package:salhub/views/pages/jomrous/house.dart';
 import 'package:salhub/views/pages/jomrous/restaurant.dart';
 import 'package:salhub/views/pages/jomrous/sports.dart';
+import 'package:salhub/views/pages/jomrous/time.dart';
 import 'package:salhub/views/pages/jomrous/vegetable.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 
@@ -256,7 +257,7 @@ class JomrousPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Placeholder()),
+                  MaterialPageRoute(builder: (context) => TimePage()),
                 );
               },
               child: Container(
