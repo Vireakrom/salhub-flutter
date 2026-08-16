@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salhub/views/pages/login_page.dart';
+import 'package:salhub/views/pages/auth/login_page.dart';
 import 'package:salhub/views/widgets/salhub_widget.dart';
 
 class WelcomePage extends StatelessWidget {

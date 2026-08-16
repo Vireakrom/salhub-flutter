@@ -1,5 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:salhub/views/pages/sign_up_page.dart';
+import 'package:salhub/data/notfiers.dart';
+import 'package:salhub/views/pages/auth/reset_password_page.dart';
+import 'package:salhub/views/pages/auth/sign_up_page.dart';
 import 'package:salhub/views/widget_tree.dart';
 import 'package:salhub/views/widgets/salhub_widget.dart';
 
@@ -13,6 +16,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController controllerPw = TextEditingController();
+  String errorMessage = '';
 
   bool hidden = true;
   @override
@@ -26,6 +30,27 @@ class _LoginPageState extends State<LoginPage> {
     controllerEmail.dispose();
     controllerPw.dispose();
     super.dispose();
+  }
+
+  void signIn() async {
+    try {
+      await authService.value.signIn(
+        email: controllerEmail.text,
+        password: controllerPw.text,
+      );
+      goToWidgetTree();
+    } on FirebaseException catch (e) {
+      setState(() {
+        errorMessage = e.message ?? "There is an error.";
+      });
+    }
+  }
+
+  void goToWidgetTree() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => WidgetTree()),
+    );
   }
 
   @override
@@ -97,9 +122,22 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 20),
                 Row(
                   children: [
-                    Text(
-                      "Forget password?",
-                      style: TextStyle(color: Color(0xFF3F2514), fontSize: 15),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ResetPasswordPage(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        "Forget password?",
+                        style: TextStyle(
+                          color: Color(0xFF3F2514),
+                          fontSize: 15,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -107,10 +145,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 OutlinedButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => WidgetTree()),
-                    );
+                    signIn();
                   },
                   style: OutlinedButton.styleFrom(
                     minimumSize: Size(double.infinity, 40),
@@ -155,6 +190,8 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
+                SizedBox(height: 50),
+                Text(errorMessage, style: TextStyle(color: Colors.red)),
               ],
             ),
           ),

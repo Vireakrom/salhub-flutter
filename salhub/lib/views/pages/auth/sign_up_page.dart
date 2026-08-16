@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:salhub/views/pages/login_page.dart';
+import 'package:salhub/data/notfiers.dart';
+import 'package:salhub/views/pages/auth/login_page.dart';
 import 'package:salhub/views/widgets/salhub_widget.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -14,6 +16,8 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController controllerPw = TextEditingController();
   bool hidden = true;
+  String errorMessage = '';
+
   @override
   void initState() {
     hidden = true;
@@ -26,6 +30,28 @@ class _SignUpPageState extends State<SignUpPage> {
     controllerUsername.dispose();
     controllerPw.dispose();
     super.dispose();
+  }
+
+  void register() async {
+    try {
+      await authService.value.createAccount(
+        email: controllerEmail.text,
+        password: controllerPw.text,
+        username: controllerUsername.text,
+      );
+      goToLoginPage();
+    } on FirebaseAuthException catch (e) {
+      setState(() {
+        errorMessage = e.message ?? 'There is an error';
+      });
+    }
+  }
+
+  void goToLoginPage() {
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => LoginPage()),
+    );
   }
 
   @override
@@ -119,10 +145,7 @@ class _SignUpPageState extends State<SignUpPage> {
 
                 OutlinedButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginPage()),
-                    );
+                    register();
                   },
                   style: OutlinedButton.styleFrom(
                     minimumSize: Size(double.infinity, 40),
@@ -143,6 +166,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
+                SizedBox(height: 50),
+                Text(errorMessage, style: TextStyle(color: Colors.red)),
               ],
             ),
           ),
