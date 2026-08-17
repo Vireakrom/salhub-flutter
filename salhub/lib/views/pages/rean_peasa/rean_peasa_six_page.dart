@@ -21,9 +21,11 @@ class _ReanPeasaSixPageState extends State<ReanPeasaSixPage> {
         automaticallyImplyLeading: false,
         leadingWidth: 100,
         leading: BackButtonWidget(),
-        title: Text(
-          "ការពិភាក្សាអំពីគម្រោង និងអនាគត",
-          style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
+        title: FittedBox(
+          child: Text(
+            "ការពិភាក្សាអំពីគម្រោង និងអនាគត",
+            style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
+          ),
         ),
         centerTitle: true,
       ),

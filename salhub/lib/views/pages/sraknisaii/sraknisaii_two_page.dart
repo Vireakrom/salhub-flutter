@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
-import 'package:salhub/views/widgets/sraknisaii_widget.dart';
 
 class SraknisaiiTwoPage extends StatefulWidget {
   const SraknisaiiTwoPage({super.key});
@@ -21,8 +20,7 @@ class _SraknisaiiTwoPageState extends State<SraknisaiiTwoPage> {
         title: Text(
           "រៀនស្រៈនិស្ស័យ",
           style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
-
-        ), 
+        ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -103,12 +101,10 @@ class _SraknisaiiTwoPageState extends State<SraknisaiiTwoPage> {
                   ),
 
                   const SizedBox(height: 10),
-
                 ],
-                
               ),
 
-                  const SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -165,9 +161,7 @@ class _SraknisaiiTwoPageState extends State<SraknisaiiTwoPage> {
                   ),
 
                   const SizedBox(height: 10),
-
                 ],
-                
               ),
 
               const SizedBox(height: 10),
@@ -227,9 +221,7 @@ class _SraknisaiiTwoPageState extends State<SraknisaiiTwoPage> {
                   ),
 
                   const SizedBox(height: 10),
-
                 ],
-                
               ),
 
               const SizedBox(height: 10),
@@ -289,18 +281,12 @@ class _SraknisaiiTwoPageState extends State<SraknisaiiTwoPage> {
                   ),
 
                   const SizedBox(height: 10),
-
                 ],
-                
               ),
-
-
-
             ],
           ),
         ),
       ),
     );
   }
-
 }

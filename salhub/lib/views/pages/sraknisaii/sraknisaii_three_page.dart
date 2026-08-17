@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
-import 'package:salhub/views/widgets/sraknisaii_widget.dart';
 
 class SraknisaiiThreePage extends StatefulWidget {
   const SraknisaiiThreePage({super.key});
@@ -12,17 +11,16 @@ class SraknisaiiThreePage extends StatefulWidget {
 class _SraknisaiiThreePageState extends State<SraknisaiiThreePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold (
+    return Scaffold(
       appBar: AppBar(
-       backgroundColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         leadingWidth: 100,
         leading: BackButtonWidget(),
         title: Text(
           "រៀនស្រៈពេញតួ",
           style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
-
-        ), 
+        ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -46,7 +44,7 @@ class _SraknisaiiThreePageState extends State<SraknisaiiThreePage> {
               ),
               const SizedBox(height: 15),
 
-              //Row 1 
+              //Row 1
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -103,9 +101,7 @@ class _SraknisaiiThreePageState extends State<SraknisaiiThreePage> {
                   ),
 
                   const SizedBox(height: 10),
-                  
                 ],
-                
               ),
 
               Row(
@@ -164,9 +160,7 @@ class _SraknisaiiThreePageState extends State<SraknisaiiThreePage> {
                   ),
 
                   const SizedBox(height: 10),
-                  
                 ],
-                
               ),
 
               Row(
@@ -225,17 +219,12 @@ class _SraknisaiiThreePageState extends State<SraknisaiiThreePage> {
                   ),
 
                   const SizedBox(height: 10),
-                  
                 ],
-                
               ),
-
-
-            ]
-          )
-        )
+            ],
+          ),
+        ),
       ),
     );
   }
-
 }

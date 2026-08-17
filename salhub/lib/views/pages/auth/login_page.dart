@@ -17,7 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController controllerPw = TextEditingController();
   String errorMessage = '';
-
+  bool _isLoading = false;
   bool hidden = true;
   @override
   void initState() {
@@ -33,16 +33,35 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void signIn() async {
+    if (_isLoading) return;
+    setState(() {
+      _isLoading = true;
+      errorMessage = '';
+    });
     try {
       await authService.value.signIn(
         email: controllerEmail.text,
         password: controllerPw.text,
       );
-      goToWidgetTree();
+      if (mounted) goToWidgetTree();
     } on FirebaseException catch (e) {
-      setState(() {
-        errorMessage = e.message ?? "There is an error.";
-      });
+      if (mounted) {
+        setState(() {
+          errorMessage = e.message ?? "There is an error.";
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          errorMessage = "An unexpected error occurred.";
+        });
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
@@ -144,9 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 50),
 
                 OutlinedButton(
-                  onPressed: () {
-                    signIn();
-                  },
+                  onPressed: _isLoading ? null : () => signIn(),
                   style: OutlinedButton.styleFrom(
                     minimumSize: Size(double.infinity, 40),
                     shape: RoundedRectangleBorder(
@@ -155,14 +172,25 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Login",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF3F2514),
-                      ),
-                    ),
+                    child: _isLoading
+                        ? SizedBox(
+                            height: 24,
+                            width: 24,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2.5,
+                              color: Color(
+                                0xFF3F2514,
+                              ), // Matches your theme color
+                            ),
+                          )
+                        : Text(
+                            "Login",
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF3F2514),
+                            ),
+                          ),
                   ),
                 ),
                 Row(

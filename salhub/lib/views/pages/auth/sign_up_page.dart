@@ -17,6 +17,7 @@ class _SignUpPageState extends State<SignUpPage> {
   TextEditingController controllerPw = TextEditingController();
   bool hidden = true;
   String errorMessage = '';
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -33,17 +34,36 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   void register() async {
+    if (_isLoading) return;
+    setState(() {
+      _isLoading = true;
+      errorMessage = '';
+    });
     try {
       await authService.value.createAccount(
         email: controllerEmail.text,
         password: controllerPw.text,
         username: controllerUsername.text,
       );
-      goToLoginPage();
+      if (mounted) goToLoginPage();
     } on FirebaseAuthException catch (e) {
-      setState(() {
-        errorMessage = e.message ?? 'There is an error';
-      });
+      if (mounted) {
+        setState(() {
+          errorMessage = e.message ?? 'There is an error';
+        });
+      }
+    } catch (e) {
+      if (mounted) {
+        setState(() {
+          errorMessage = "An unexpected error occurred.";
+        });
+      }
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
@@ -138,7 +158,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
 
                   controller: controllerPw,
-                  onEditingComplete: () => setState(() {}),
+                  onEditingComplete: _isLoading ? null : () => setState(() {}),
                 ),
 
                 SizedBox(height: 50),
@@ -154,17 +174,28 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                     backgroundColor: Color(0xFFD9D9D9),
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF3F2514),
-                      ),
-                    ),
-                  ),
+                  child: _isLoading
+                      ? SizedBox(
+                          height: 24,
+                          width: 24,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2.5,
+                            color: Color(
+                              0xFF3F2514,
+                            ), // Matches your theme color
+                          ),
+                        )
+                      : Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Sign Up",
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF3F2514),
+                            ),
+                          ),
+                        ),
                 ),
 
                 Row(

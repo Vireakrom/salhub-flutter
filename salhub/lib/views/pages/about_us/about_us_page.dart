@@ -69,7 +69,7 @@ class AboutUsPage extends StatelessWidget {
                           style: TextStyle(fontSize: 19),
                         ),
                         Text(
-                          "យើងមានបេសកកម្មក្នុងការជម្រុញការយល់ដឹងអំពីវប្បធម៌ខ្មែរតាមរយៈភាសា",
+                          "យើងមានបេសកកម្មក្នុងការជម្រុញការយល់ដឹងអំពីវប្បធម៌ខ្មែរតាមរយៈភាសា។",
                           textAlign: .center,
                           style: TextStyle(fontSize: 19),
                         ),
