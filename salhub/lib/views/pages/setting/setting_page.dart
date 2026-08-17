@@ -242,6 +242,7 @@ class SettingPage extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(height: 100),
                 ],
               ),
             ),

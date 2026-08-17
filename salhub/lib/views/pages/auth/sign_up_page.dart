@@ -142,7 +142,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
 
                 SizedBox(height: 50),
-
+                Text(errorMessage, style: TextStyle(color: Colors.red)),
                 OutlinedButton(
                   onPressed: () {
                     register();
@@ -166,8 +166,33 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                 ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Already have a account?",
+                      style: TextStyle(color: Color(0xFF000000), fontSize: 16),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                          color: Color(0xFF3F2514),
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 SizedBox(height: 50),
-                Text(errorMessage, style: TextStyle(color: Colors.red)),
               ],
             ),
           ),

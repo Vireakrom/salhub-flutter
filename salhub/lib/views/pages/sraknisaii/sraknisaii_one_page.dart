@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
-import 'package:salhub/views/widgets/sraknisaii_widget.dart';
 
 class SraknisaiiOnePage extends StatefulWidget {
   const SraknisaiiOnePage({super.key});
@@ -46,227 +45,232 @@ class _SraknisaiiOnePageState extends State<SraknisaiiOnePage> {
               const SizedBox(height: 15),
 
               //Row 1
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      RichText(
-                        text: const TextSpan(
-                          children: [
-                            TextSpan(
-                              text: " ក ខ ",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFF790303),
+              FittedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        RichText(
+                          text: const TextSpan(
+                            children: [
+                              TextSpan(
+                                text: " ក ខ ",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFF790303),
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: " គ ​ឃ ​ង ",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFFBA0303),
+                              TextSpan(
+                                text: " គ ​ឃ ​ង ",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFFBA0303),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.volume_up,
-                          color: Colors.blue,
-                          size: 30,
+                        IconButton(
+                          icon: const Icon(
+                            Icons.volume_up,
+                            color: Colors.blue,
+                            size: 30,
+                          ),
+                          onPressed: () {
+                            print("Play audio");
+                          },
                         ),
-                        onPressed: () {
-                          print("Play audio");
-                        },
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
 
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      RichText(
-                        text: const TextSpan(
-                          children: [
-                            TextSpan(
-                              text: " ច ​ឆ ",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFF790303),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        RichText(
+                          text: const TextSpan(
+                            children: [
+                              TextSpan(
+                                text: " ច ​ឆ ",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFF790303),
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: " ​ជ ​ឈ ​ញ ",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFFBA0303),
+                              TextSpan(
+                                text: " ​ជ ​ឈ ​ញ ",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFFBA0303),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.volume_up,
-                          color: Colors.blue,
-                          size: 30,
+                        IconButton(
+                          icon: const Icon(
+                            Icons.volume_up,
+                            color: Colors.blue,
+                            size: 30,
+                          ),
+                          onPressed: () {
+                            print("Play audio");
+                          },
                         ),
-                        onPressed: () {
-                          print("Play audio");
-                        },
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      RichText(
-                        text: const TextSpan(
-                          children: [
-                            TextSpan(
-                              text: "k kh  ",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFF790303),
+              FittedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        RichText(
+                          text: const TextSpan(
+                            children: [
+                              TextSpan(
+                                text: "k kh  ",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFF790303),
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: "k kh ng",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFFBA0303),
+                              TextSpan(
+                                text: "k kh ng",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFFBA0303),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
 
-                  const SizedBox(height: 10),
-                  Row(
-                    children: [
-                      RichText(
-                        text: const TextSpan(
-                          children: [
-                            TextSpan(
-                              text: "ch chh ",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Color(0xFF790303),
+                    const SizedBox(height: 10),
+                    Row(
+                      children: [
+                        RichText(
+                          text: const TextSpan(
+                            children: [
+                              TextSpan(
+                                text: "ch chh ",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Color(0xFF790303),
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: "ch chh nh",
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Color(0xFFBA0303),
+                              TextSpan(
+                                text: "ch chh nh",
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Color(0xFFBA0303),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),SizedBox(width: 40)
-                    ],
-                  ),
-                  
-                ],
-                
+                        SizedBox(width: 40),
+                      ],
+                    ),
+                  ],
+                ),
               ),
 
               const SizedBox(height: 10),
-            Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      RichText(
-                        text: const TextSpan(
-                          children: [
-                            TextSpan(
-                              text: " ដ​ ឋ​ ",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFF790303),
+              FittedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        RichText(
+                          text: const TextSpan(
+                            children: [
+                              TextSpan(
+                                text: " ដ​ ឋ​ ",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFF790303),
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: " ឌ​ ឍ ",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFFBA0303),
+                              TextSpan(
+                                text: " ឌ​ ឍ ",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFFBA0303),
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: " ណ ",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFF790303),
+                              TextSpan(
+                                text: " ណ ",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFF790303),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.volume_up,
-                          color: Colors.blue,
-                          size: 30,
+                        IconButton(
+                          icon: const Icon(
+                            Icons.volume_up,
+                            color: Colors.blue,
+                            size: 30,
+                          ),
+                          onPressed: () {
+                            print("Play audio");
+                          },
                         ),
-                        onPressed: () {
-                          print("Play audio");
-                        },
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
 
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      RichText(
-                        text: const TextSpan(
-                          children: [
-                            TextSpan(
-                              text: " ត ​ថ ",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFF790303),
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        RichText(
+                          text: const TextSpan(
+                            children: [
+                              TextSpan(
+                                text: " ត ​ថ ",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFF790303),
+                                ),
                               ),
-                            ),
-                            TextSpan(
-                              text: " ទ ​ធ ​ន ",
-                              style: TextStyle(
-                                fontSize: 25,
-                                color: Color(0xFFBA0303),
+                              TextSpan(
+                                text: " ទ ​ធ ​ន ",
+                                style: TextStyle(
+                                  fontSize: 25,
+                                  color: Color(0xFFBA0303),
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      IconButton(
-                        icon: const Icon(
-                          Icons.volume_up,
-                          color: Colors.blue,
-                          size: 30,
+                        IconButton(
+                          icon: const Icon(
+                            Icons.volume_up,
+                            color: Colors.blue,
+                            size: 30,
+                          ),
+                          onPressed: () {
+                            print("Play audio");
+                          },
                         ),
-                        onPressed: () {
-                          print("Play audio");
-                        },
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
 
-             Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
@@ -323,12 +327,11 @@ class _SraknisaiiOnePageState extends State<SraknisaiiOnePage> {
                             ),
                           ],
                         ),
-                      ),SizedBox(width: 40)
+                      ),
+                      SizedBox(width: 40),
                     ],
                   ),
-                  
                 ],
-                
               ),
 
               Row(
@@ -444,12 +447,11 @@ class _SraknisaiiOnePageState extends State<SraknisaiiOnePage> {
                             ),
                           ],
                         ),
-                      ),SizedBox(width: 40)
+                      ),
+                      SizedBox(width: 40),
                     ],
                   ),
-                  
                 ],
-                
               ),
 
               Row(
@@ -508,13 +510,11 @@ class _SraknisaiiOnePageState extends State<SraknisaiiOnePage> {
                   ),
 
                   const SizedBox(height: 10),
-                  
                 ],
-                
               ),
 
               //Row 2
-          ],
+            ],
           ),
         ),
       ),
