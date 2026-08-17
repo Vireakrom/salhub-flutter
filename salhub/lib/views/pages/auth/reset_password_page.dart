@@ -63,14 +63,10 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
             child: Column(
               children: [
                 SalhubWidget(),
-                SizedBox(height: 20),
+
+                SizedBox(height: 100),
                 Text(
-                  "Welcome Back",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 40),
-                Text(
-                  "Reset Your Password.",
+                  "Enter email to reset Your Password.",
                   style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 20),
@@ -110,6 +106,28 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       "Reset Password",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF3F2514),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                OutlinedButton(
+                  onPressed: () => Navigator.pop(context),
+                  style: OutlinedButton.styleFrom(
+                    minimumSize: Size(double.infinity, 40),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5.0),
+                    ),
+                    backgroundColor: Color(0xFFD9D9D9),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "Back",
                       style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,

@@ -1,31 +1,12 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:salhub/data/notfiers.dart';
-import 'package:salhub/views/pages/auth/login_page.dart';
+import 'package:salhub/views/pages/auth/logout_page.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    void goToLoginPage() {
-      Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => LoginPage()),
-        (route) => false,
-      );
-    }
-
-    void logout() async {
-      try {
-        await authService.value.signOut();
-        selectedPageNotifier.value = 0;
-        goToLoginPage();
-      } on FirebaseException catch (e) {
-        print(e.message);
-      }
-    }
-
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -236,7 +217,10 @@ class SettingPage extends StatelessWidget {
 
                   OutlinedButton(
                     onPressed: () {
-                      logout();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LogoutPage()),
+                      );
                     },
                     style: OutlinedButton.styleFrom(
                       minimumSize: Size(double.infinity, 40),
