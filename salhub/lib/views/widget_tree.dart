@@ -8,6 +8,7 @@ import 'package:salhub/views/widgets/navbar_widget.dart';
 
 
 
+
 List<Widget> pages = [HomePage(), LomhatPage(), AboutUsPage(), SettingPage(), ];
 
 class WidgetTree extends StatelessWidget {
