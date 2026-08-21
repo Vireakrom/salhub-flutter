@@ -92,7 +92,7 @@ class AboutUsPage extends StatelessWidget {
                     ),
                     side: const BorderSide(color: Color(0xFF3F2514), width: 2),
                   ),
-                  child: Text("Get Started"),
+                  child: Text("Admin Login"),
                 ),
                         SizedBox(height: 20),
                         Divider(height: 0),

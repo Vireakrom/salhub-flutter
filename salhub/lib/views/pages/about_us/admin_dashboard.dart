@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:salhub/views/pages/general_culture/general_culture_page.dart';
-import 'package:salhub/views/pages/grammar/grammar_page.dart';
-import 'package:salhub/views/pages/jomrous/jomrous_page.dart';
-import 'package:salhub/views/pages/numeric/numeric_page.dart';
-import 'package:salhub/views/pages/rean_peasa/rean_peasa_page.dart';
-import 'package:salhub/views/pages/sraknisaii/sraknisaii_page.dart';
+import 'package:salhub/views/widgets/back_button_widget.dart';
 
 class AdminDashboard extends StatelessWidget {
   const AdminDashboard({super.key});
@@ -12,537 +7,132 @@ class AdminDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
-    double heroHeight = screenHeight * 0.7;
+
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Column(
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+        automaticallyImplyLeading: false,
+        leadingWidth: 100,
+        leading: BackButtonWidget(),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          // This row replaces your old green box to display the 3 metric cards horizontally
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            child: Row(
               children: [
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    SizedBox(
-                      width: screenWidth,
-                      height: heroHeight,
-                      child: Image.asset(
-                        './assets/images/home_background.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    FittedBox(
-                      child: Column(
-                        children: [
-                          Text(
-                            "សូមស្វាគមន៍",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 24,
-                              color: Color(0xFF6D3F21),
-                            ),
-                          ),
-                          Text(
-                            "រៀនភាសាខ្មែរ",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 36,
-                              color: Color(0xFF608B04),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                // 1. Total App Members (Green Card)
+                Expanded(
+                  child: _buildMetricCard(
+                    title: 'Total App Members',
+                    value: '2500',
+                    color: const Color(0xFFC2EA7E), // Soft Green from image
+                    icon: Icons.person_outline,
+                  ),
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -30),
-                  child: Container(
-                    margin: const EdgeInsets.only(
-                      top: 0,
-                    ), // Adjust this value to shift your container up/down
-                    padding: const EdgeInsets.all(20),
-                    decoration: const BoxDecoration(
-                      color: Color(0xFFFFFDF0),
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(32),
-                        topRight: Radius.circular(32),
-                      ),
-                    ),
-                    child: GridView.count(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      primary: false,
-                      padding: const EdgeInsets.all(20),
-                      crossAxisSpacing: 10,
-                      mainAxisSpacing: 10,
-                      crossAxisCount: 2,
-                      children: <Widget>[
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => SraknisaiiPage(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: Color(0xFFF7BE2D),
-                                width: 2,
-                              ),
-                            ),
-                            child: Stack(
-                              alignment: Alignment.center,
+                const SizedBox(width: 12), // Space between cards
 
-                              children: [
-                                Positioned.fill(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(18),
-                                    child: ShaderMask(
-                                      blendMode: BlendMode.srcIn,
-                                      shaderCallback: (bounds) =>
-                                          LinearGradient(
-                                            colors: [
-                                              Color(0xFFFFF3B1),
-                                              Color(0xFFF8F1CD),
-                                            ],
-                                            begin: Alignment.topLeft,
-                                            end: Alignment.bottomRight,
-                                          ).createShader(bounds),
-                                      child: Container(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            "ក",
-                                            style: TextStyle(
-                                              color: Color(0xFFF7BE2D),
-                                              fontSize: 36,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            "ិ",
-                                            style: TextStyle(
-                                              color: Color(0xFFF7BE2D),
-                                              fontSize: 36,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            "ឥ",
-                                            style: TextStyle(
-                                              color: Color(0xFFF7BE2D),
-                                              fontSize: 36,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Text(
-                                        "អក្សរខ្មែរ",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          color: Color(0xFF6D3F21),
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Text(
-                                          "ព្យញ្ជនៈ ស្រះនិស្យ័យ ស្រះពេញតួរ",
-                                          style: TextStyle(
-                                            fontSize: 10,
-                                            color: Color(0xFF6D3F21),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                // 2. Today's Active Learners (Blue Card)
+                Expanded(
+                  child: _buildMetricCard(
+                    title: "Today's Active Learners",
+                    value: '68',
+                    color: const Color(0xFF75D0F5), // Soft Blue from image
+                    icon: Icons.person_outline,
+                  ),
+                ),
+                const SizedBox(width: 12), // Space between cards
 
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => NumericPage(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: Color(0xFF0097B5),
-                                width: 2,
-                              ),
-                            ),
-                            child: Stack(
-                              alignment: Alignment.center,
-
-                              children: [
-                                Positioned.fill(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(18),
-                                    child: ShaderMask(
-                                      blendMode: BlendMode.srcIn,
-                                      shaderCallback: (bounds) =>
-                                          LinearGradient(
-                                            colors: [
-                                              Color(0xFFB8F8FE),
-                                              Color(0xFFCDF6FA),
-                                            ],
-                                            begin: Alignment.topLeft,
-                                            end: Alignment.bottomRight,
-                                          ).createShader(bounds),
-                                      child: Container(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            "១",
-                                            style: TextStyle(
-                                              color: Color(0xFF0097B5),
-                                              fontSize: 36,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            "២",
-                                            style: TextStyle(
-                                              color: Color(0xFF0097B5),
-                                              fontSize: 36,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          Text(
-                                            "៣",
-                                            style: TextStyle(
-                                              color: Color(0xFF0097B5),
-                                              fontSize: 36,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Text(
-                                        "រៀនលេខខ្មែរ",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          color: Color(0xFF01518A),
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => GrammarPage(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: Color(0xFFB342FF),
-                                width: 2,
-                              ),
-                            ),
-                            child: Stack(
-                              alignment: Alignment.center,
-
-                              children: [
-                                Positioned.fill(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(18),
-                                    child: ShaderMask(
-                                      blendMode: BlendMode.srcIn,
-                                      shaderCallback: (bounds) =>
-                                          LinearGradient(
-                                            colors: [
-                                              Color(0xFFE6B8FE),
-                                              Color(0xFFF8E2FF),
-                                            ],
-                                            begin: Alignment.topLeft,
-                                            end: Alignment.bottomRight,
-                                          ).createShader(bounds),
-                                      child: Container(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(
-                                        child: Image.asset(
-                                          './assets/images/book.png',
-                                        ),
-                                      ),
-                                      Text(
-                                        "រៀនវេយ្យាករណ៍",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          color: Color(0xFF510286),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ReanPeasaPage(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: Color(0xFFBA0303),
-                                width: 2,
-                              ),
-                            ),
-                            child: Stack(
-                              alignment: Alignment.center,
-
-                              children: [
-                                Positioned.fill(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(18),
-                                    child: ShaderMask(
-                                      blendMode: BlendMode.srcIn,
-                                      shaderCallback: (bounds) =>
-                                          LinearGradient(
-                                            colors: [
-                                              Color(0xFFFF8373),
-                                              Color(0xFFFFE8F2),
-                                            ],
-                                            begin: Alignment.topLeft,
-                                            end: Alignment.bottomRight,
-                                          ).createShader(bounds),
-                                      child: Container(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(
-                                        child: Image.asset(
-                                          './assets/images/message.png',
-                                        ),
-                                      ),
-                                      Text(
-                                        "រៀនភាសាប្រចាំថ្ងៃ",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          color: Color(0xFF790303),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => JomrousPage(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: Color(0xFF21DB81),
-                                width: 2,
-                              ),
-                            ),
-                            child: Stack(
-                              alignment: Alignment.center,
-
-                              children: [
-                                Positioned.fill(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(18),
-                                    child: ShaderMask(
-                                      blendMode: BlendMode.srcIn,
-                                      shaderCallback: (bounds) =>
-                                          LinearGradient(
-                                            colors: [
-                                              Color(0xFF25E555),
-                                              Color(0xFF8CF1B0),
-                                            ],
-                                            begin: Alignment.topLeft,
-                                            end: Alignment.bottomRight,
-                                          ).createShader(bounds),
-                                      child: Container(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(
-                                        child: Image.asset(
-                                          './assets/images/hand.png',
-                                        ),
-                                      ),
-                                      Text(
-                                        "ភាសាចម្រុះ",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          color: Color(0xFF790303),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => GeneralCulturePage(),
-                              ),
-                            );
-                          },
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(
-                                color: Color(0xFFBC850C),
-                                width: 2,
-                              ),
-                            ),
-                            child: Stack(
-                              alignment: Alignment.center,
-
-                              children: [
-                                Positioned.fill(
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(18),
-                                    child: ShaderMask(
-                                      blendMode: BlendMode.srcIn,
-                                      shaderCallback: (bounds) =>
-                                          LinearGradient(
-                                            colors: [
-                                              Color(0xFFFFC973),
-                                              Color(0xFFFFF2DD),
-                                            ],
-                                            begin: Alignment.topLeft,
-                                            end: Alignment.bottomRight,
-                                          ).createShader(bounds),
-                                      child: Container(color: Colors.white),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      SizedBox(
-                                        child: Image.asset(
-                                          './assets/images/eye_book.png',
-                                        ),
-                                      ),
-                                      Text(
-                                        "វប្បធម៍ទូរទៅ",
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                          color: Color(0xFF790303),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-
-                        SizedBox(height: 5),
-                      ],
-                    ),
+                // 3. New Users This Month (Red/Pink Card)
+                Expanded(
+                  child: _buildMetricCard(
+                    title: 'New Users (This Month)',
+                    value: '45',
+                    color: const Color(0xFFFA8A87), // Soft Red from image
+                    icon: Icons.person_outline,
                   ),
                 ),
               ],
             ),
-
-            Positioned(
-              right: 5,
-              top: heroHeight - 200,
-              child: Image.asset('./assets/images/background_logo.png'),
+          ),
+          
+          // --- Your original flex code remains here ---
+          Expanded(
+            flex: 1,
+            child: Container(
+              color: Colors.pink,
+              child: const Center(child: Text('Flex: 1')),
             ),
-          ],
-        ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.blue,
+              child: const Center(child: Text('Flex: 2')),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+  // Helper builder function to create the clean rounded metric cards
+  Widget _buildMetricCard({
+    required String title,
+    required String value,
+    required Color color,
+    required IconData icon,
+  }) {
+    return Container(
+      height: 149, // Matched to your 313x149 image layout specs
+      padding: const EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: BorderRadius.circular(20), // Smooth rounded corners
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.12), // Shadow beneath cards
+            blurRadius: 6,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          // Top line: Card Title + User Icon
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black87,
+                  ),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              Icon(icon, color: Colors.black54, size: 20),
+            ],
+          ),
+          
+          // Big bold number value in the center
+          Text(
+            value,
+            style: const TextStyle(
+              fontSize: 34,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+          ),
+          const SizedBox(height: 2), // Empty spacer bottom balance padding
+        ],
       ),
     );
   }
