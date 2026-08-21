@@ -9,7 +9,6 @@ import 'package:salhub/views/pages/jomrous/vegetable.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 
 
-
 class JomrousPage extends StatelessWidget {
   const JomrousPage({super.key});
 
@@ -333,7 +332,6 @@ class JomrousPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 50,),
-             
           ],
         ),
       ),
