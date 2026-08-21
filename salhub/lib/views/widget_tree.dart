@@ -6,7 +6,9 @@ import 'package:salhub/views/pages/lomhat_page/lomhat_page.dart';
 import 'package:salhub/views/pages/setting/setting_page.dart';
 import 'package:salhub/views/widgets/navbar_widget.dart';
 
-List<Widget> pages = [HomePage(), LomhatPage(), AboutUsPage(), SettingPage()];
+
+
+List<Widget> pages = [HomePage(), LomhatPage(), AboutUsPage(), SettingPage(), ];
 
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});

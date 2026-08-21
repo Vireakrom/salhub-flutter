@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:salhub/views/pages/about_us/admin_login_page.dart';
+import 'package:salhub/views/pages/about_us/admin_dashboard.dart';
 
 class AboutUsPage extends StatelessWidget {
   const AboutUsPage({super.key});
@@ -73,6 +75,25 @@ class AboutUsPage extends StatelessWidget {
                           textAlign: .center,
                           style: TextStyle(fontSize: 19),
                         ),
+                         SizedBox(height: 20),
+
+                FilledButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => AdminLoginPage()),
+                    );
+                  },
+                  style: FilledButton.styleFrom(
+                    backgroundColor: Color(0xFFD9D9D9),
+                    foregroundColor: Color(0xFF3F2514),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    side: const BorderSide(color: Color(0xFF3F2514), width: 2),
+                  ),
+                  child: Text("Get Started"),
+                ),
                         SizedBox(height: 20),
                         Divider(height: 0),
                         SizedBox(height: 20),
@@ -85,12 +106,14 @@ class AboutUsPage extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: 50),
+                        
                       ],
                     ),
                   ),
                 ),
               ],
             ),
+            
 
             Positioned(
               right: 5,

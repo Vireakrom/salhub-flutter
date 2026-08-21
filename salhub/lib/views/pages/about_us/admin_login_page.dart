@@ -1,28 +1,20 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:salhub/data/notfiers.dart';
 import 'package:salhub/views/pages/auth/reset_password_page.dart';
-import 'package:salhub/views/widget_tree.dart';
+import 'package:salhub/views/pages/about_us/admin_dashboard.dart';
 import 'package:salhub/views/widgets/salhub_widget.dart';
 
 class AdminLoginPage extends StatefulWidget {
   const AdminLoginPage({super.key});
 
   @override
-  State<AdminLoginPage> createState() => _LoginPageState();
+  State<AdminLoginPage> createState() => _AdminLoginPageState();
 }
 
-class _LoginPageState extends State<AdminLoginPage> {
-  TextEditingController controllerEmail = TextEditingController();
-  TextEditingController controllerPw = TextEditingController();
-  String errorMessage = '';
+class _AdminLoginPageState extends State<AdminLoginPage> {
+  final TextEditingController controllerEmail = TextEditingController();
+  final TextEditingController controllerPw = TextEditingController();
 
   bool hidden = true;
-  @override
-  void initState() {
-    hidden = true;
-    super.initState();
-  }
 
   @override
   void dispose() {
@@ -30,25 +22,12 @@ class _LoginPageState extends State<AdminLoginPage> {
     controllerPw.dispose();
     super.dispose();
   }
-
-  void signIn() async {
-    try {
-      await authService.value.signIn(
-        email: controllerEmail.text,
-        password: controllerPw.text,
-      );
-      goToWidgetTree();
-    } on FirebaseException catch (e) {
-      setState(() {
-        errorMessage = e.message ?? "There is an error.";
-      });
-    }
-  }
-
-  void goToWidgetTree() {
+  void goToAdminDashboard() {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => WidgetTree()),
+      MaterialPageRoute(
+        builder: (context) => const AdminDashboard(),
+      ),
     );
   }
 
@@ -61,108 +40,106 @@ class _LoginPageState extends State<AdminLoginPage> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SalhubWidget(),
-                SizedBox(height: 20),
-                Text(
+            SalhubWidget(),
+
+              SizedBox(height: 20),
+
+              Text(
                   "Welcome Back",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                SizedBox(height: 40),
-                Text(
+
+              SizedBox(height: 40),
+
+              Text(
                   "Admin Login",
-                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                SizedBox(height: 20),
+
+              SizedBox(height: 20),
                 TextField(
+                  controller: controllerEmail,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     hintText: "Email",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    suffixIcon: Align(
-                      widthFactor: 1.0,
-                      heightFactor: 1.0,
-                      child: Icon(Icons.email),
-                    ),
+                    suffixIcon: const Icon(Icons.email),
                   ),
-                  controller: controllerEmail,
-                  onEditingComplete: () => setState(() {}),
                 ),
-                SizedBox(height: 20),
 
+                SizedBox(height: 20),
                 TextField(
+                  controller: controllerPw,
                   obscureText: hidden,
                   decoration: InputDecoration(
                     hintText: "Password",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
-                    suffixIcon: Align(
-                      widthFactor: 1.0,
-                      heightFactor: 1.0,
-                      child: IconButton(
-                        onPressed: () => setState(() {
-                          hidden = !hidden;
-                        }),
-                        icon: Icon(
-                          hidden == true
-                              ? Icons.visibility_off
-                              : Icons.remove_red_eye,
-                        ),
-                      ),
-                    ),
-                  ),
-                  controller: controllerPw,
-                  onEditingComplete: () => setState(() {}),
-                ),
-                SizedBox(height: 20),
-                Row(
-                  children: [
-                    TextButton(
+                    suffixIcon: IconButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ResetPasswordPage(),
-                          ),
-                        );
+                        setState(() {
+                          hidden = !hidden;
+                        });
                       },
-                      child: Text(
-                        "Forget password?",
-                        style: TextStyle(
-                          color: Color(0xFF3F2514),
-                          fontSize: 15,
-                        ),
+                      icon: Icon(
+                        hidden
+                            ? Icons.visibility_off
+                            : Icons.visibility,
                       ),
                     ),
-                  ],
+                  ),
                 ),
-                SizedBox(height: 50),
 
-                OutlinedButton(
-                  onPressed: () {
-                    signIn();
-                  },
-                  style: OutlinedButton.styleFrom(
-                    minimumSize: Size(double.infinity, 40),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Login",
+                SizedBox(height: 10),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              const ResetPasswordPage(),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Forgot password?",
                       style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
                         color: Color(0xFF3F2514),
+                        fontSize: 15,
                       ),
                     ),
                   ),
                 ),
-                SizedBox(height: 50),
-                Text(errorMessage, style: TextStyle(color: Colors.red)),
+
+                SizedBox(height: 40),
+                OutlinedButton(
+                  onPressed: goToAdminDashboard,
+                  style: OutlinedButton.styleFrom(
+                    minimumSize: const Size(double.infinity, 55),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF3F2514),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),
