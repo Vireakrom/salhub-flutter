@@ -68,7 +68,7 @@ class AdminContentsPage extends StatelessWidget {
                     },
                     child: LessonCard(
                       customWidget: Image.asset(
-                        'assets/book.png',
+                        'assets/images/book.png',
                         width: 80,
                         height: 80,
                         fit: BoxFit.contain,
@@ -93,7 +93,7 @@ class AdminContentsPage extends StatelessWidget {
                     },
                     child: LessonCard(
                       customWidget: Image.asset(
-                        'assets/message.png',
+                        'assets/images/message.png',
                         width: 80,
                         height: 80,
                         fit: BoxFit.contain,
@@ -117,7 +117,7 @@ class AdminContentsPage extends StatelessWidget {
                     },
                     child: LessonCard(
                       customWidget: Image.asset(
-                        'assets/hand.png',
+                        'assets/images/hand.png',
                         width: 80,
                         height: 80,
                         fit: BoxFit.contain,
@@ -141,7 +141,7 @@ class AdminContentsPage extends StatelessWidget {
                     },
                     child: LessonCard(
                       customWidget: Image.asset(
-                        'assets/eye_book.png',
+                        'assets/images/eye_book.png',
                         width: 80,
                         height: 80,
                         fit: BoxFit.contain,
@@ -165,7 +165,7 @@ class AdminContentsPage extends StatelessWidget {
                     },
                     child: LessonCard(
                       customWidget: Image.asset(
-                        'assets/background_logo.png',
+                        'assets/images/background_logo.png',
                         width: 80,
                         height: 80,
                         fit: BoxFit.contain,
@@ -182,7 +182,7 @@ class AdminContentsPage extends StatelessWidget {
             
                   // Bottom Add Lesson Card with Images on both sides
                   AddLessonCard(
-                    imagePath: 'assets/background_logo.png', // Replace with your image path
+                    imagePath: 'assets/images/background_logo.png', // Replace with your image path
                     onTap: () {
                       // Action when "Add Lesson" is pressed
                     },
