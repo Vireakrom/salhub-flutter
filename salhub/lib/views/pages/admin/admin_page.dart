@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:salhub/data/notfiers.dart';
 import 'package:salhub/models/user.dart';
@@ -24,7 +25,7 @@ class _AdminPageState extends State<AdminPage> {
             style: TextStyle(color: Color(0xFFB73229)),
           ),
           content: Text(
-            'Are you sure you want to revoke access for ${user.name}? This will remove them from the system.',
+            'Are you sure you want to remove ${user.name}? This will remove them from the system.',
           ),
           actions: [
             TextButton(
@@ -35,14 +36,42 @@ class _AdminPageState extends State<AdminPage> {
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFB73229),
               ),
-              onPressed: () {
-                setState(() {
-                  // user.removeWhere((item) => item.id == user.id);
-                });
-                Navigator.pop(context);
+              onPressed: () async {
+                try {
+                  // 1. Delete the user's data document from Firestore using their unique ID
+                  await FirebaseFirestore.instance
+                      .collection('users')
+                      .doc(user.id)
+                      .delete();
+
+                  if (mounted) {
+                    Navigator.pop(
+                      context,
+                    ); // Close the modal confirmation dialog
+
+                    // 2. Clear any local list reference or trigger your parent widget to re-fetch
+                    setState(() {});
+
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'Successfully removed ${user.name} from the system.',
+                        ),
+                      ),
+                    );
+                  }
+                } catch (e) {
+                  if (mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('Failed to delete user profile: $e'),
+                      ),
+                    );
+                  }
+                }
               },
               child: const Text(
-                'Revoke',
+                'Delete',
                 style: TextStyle(color: Colors.white),
               ),
             ),

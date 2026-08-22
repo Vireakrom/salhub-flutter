@@ -62,7 +62,8 @@ class _LoginPageState extends State<LoginPage> {
     } catch (e) {
       if (mounted) {
         setState(() {
-          errorMessage = "An unexpected error occurred.";
+          errorMessage =
+              "You may not be able to login anymore due to retricted from admin.";
         });
       }
     } finally {
