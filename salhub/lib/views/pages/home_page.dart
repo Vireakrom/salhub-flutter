@@ -5,7 +5,6 @@ import 'package:salhub/views/pages/jomrous/jomrous_page.dart';
 import 'package:salhub/views/pages/numeric/numeric_page.dart';
 import 'package:salhub/views/pages/rean_peasa/rean_peasa_page.dart';
 import 'package:salhub/views/pages/sraknisaii/sraknisaii_page.dart';
-import 'package:salhub/views/pages/about_us/admin_dashboard.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

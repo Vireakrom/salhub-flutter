@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:salhub/models/user.dart';
 
 class AuthService {
   final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
@@ -7,23 +9,55 @@ class AuthService {
 
   Stream<User?> get authStateChanges => firebaseAuth.authStateChanges();
 
-  Future<UserCredential> signIn({
+  Future<String?> signIn({
     required String email,
     required String password,
   }) async {
-    return await firebaseAuth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
+    UserCredential userCredential = await firebaseAuth
+        .signInWithEmailAndPassword(email: email, password: password);
+
+    DocumentSnapshot userDoc = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userCredential.user!.uid)
+        .get();
+
+    return userDoc['role'];
+  }
+
+  Future<bool> isAdmin() async {
+    DocumentSnapshot userDoc = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(currentUser!.uid)
+        .get();
+
+    if (userDoc['role'] == 'admin') {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   Future<UserCredential> createAccount({
     required String email,
     required String password,
     required String username,
+    String? role,
   }) async {
     UserCredential credential = await firebaseAuth
-        .createUserWithEmailAndPassword(email: email, password: password);
+        .createUserWithEmailAndPassword(
+          email: email.trim(),
+          password: password.trim(),
+        );
+
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(credential.user!.uid)
+        .set({
+          'name': username.trim(),
+          'email': email.trim(),
+          'role': role ?? 'user',
+        });
+
     User? user = credential.user;
     if (user != null) await user.updateDisplayName(username);
     return credential;
@@ -66,5 +100,45 @@ class AuthService {
 
     await currentUser!.reauthenticateWithCredential(credential);
     await currentUser!.updatePassword(newPassword);
+  }
+
+  Future<List<UserModel>> fetchUsersCollection() async {
+    try {
+      final collectionRef = FirebaseFirestore.instance
+          .collection('users')
+          .withConverter<UserModel>(
+            fromFirestore: UserModel.fromFirestore,
+            toFirestore: (user, _) => user.toFirestore(),
+          );
+
+      QuerySnapshot<UserModel> querySnapshot = await collectionRef.get();
+
+      List<UserModel> usersList = querySnapshot.docs
+          .map((doc) => doc.data())
+          .toList();
+      usersList = usersList
+          .where((user) => user.id != currentUser!.uid)
+          .toList();
+      return usersList;
+    } catch (e) {
+      return [];
+    }
+  }
+
+  Future<void> updateUserRole(String userId, String newRole) async {
+    try {
+      if (newRole != 'admin' && newRole != 'user') {
+        throw Exception("Invalid role assignment.");
+      }
+
+      await FirebaseFirestore.instance.collection('users').doc(userId).update({
+        'role': newRole,
+      });
+
+      print("User role updated to $newRole successfully.");
+    } catch (e) {
+      print("Failed to update user role: $e");
+      rethrow;
+    }
   }
 }

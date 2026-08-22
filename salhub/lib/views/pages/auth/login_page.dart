@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:salhub/data/notfiers.dart';
+import 'package:salhub/views/admin_widget_tree.dart';
+import 'package:salhub/views/pages/auth/app_loading_page.dart';
 import 'package:salhub/views/pages/auth/reset_password_page.dart';
 import 'package:salhub/views/pages/auth/sign_up_page.dart';
 import 'package:salhub/views/widget_tree.dart';
@@ -44,6 +47,12 @@ class _LoginPageState extends State<LoginPage> {
         password: controllerPw.text,
       );
       if (mounted) goToWidgetTree();
+    } on FirebaseAuthException catch (e) {
+      if (mounted) {
+        setState(() {
+          errorMessage = e.message ?? 'There is an error from firebase auth.';
+        });
+      }
     } on FirebaseException catch (e) {
       if (mounted) {
         setState(() {
@@ -68,7 +77,23 @@ class _LoginPageState extends State<LoginPage> {
   void goToWidgetTree() {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => WidgetTree()),
+      MaterialPageRoute(
+        builder: (context) {
+          return FutureBuilder<bool>(
+            future: authService.value.isAdmin(),
+            builder: (context, adminSnapshot) {
+              if (adminSnapshot.connectionState == ConnectionState.waiting) {
+                return const AppLoadingPage();
+              }
+              if (adminSnapshot.data == true) {
+                return const AdminWidgetTree();
+              } else {
+                return const WidgetTree();
+              }
+            },
+          );
+        },
+      ),
     );
   }
 
@@ -160,6 +185,8 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
+                Text(errorMessage, style: TextStyle(color: Colors.red)),
+
                 SizedBox(height: 50),
 
                 OutlinedButton(
@@ -219,7 +246,6 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
                 SizedBox(height: 50),
-                Text(errorMessage, style: TextStyle(color: Colors.red)),
               ],
             ),
           ),

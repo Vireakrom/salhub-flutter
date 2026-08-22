@@ -49,7 +49,13 @@ class _SignUpPageState extends State<SignUpPage> {
     } on FirebaseAuthException catch (e) {
       if (mounted) {
         setState(() {
-          errorMessage = e.message ?? 'There is an error';
+          errorMessage = e.message ?? 'There is an error from firebase auth.';
+        });
+      }
+    } on FirebaseException catch (e) {
+      if (mounted) {
+        setState(() {
+          errorMessage = e.message ?? 'There is an error from firebase.';
         });
       }
     } catch (e) {

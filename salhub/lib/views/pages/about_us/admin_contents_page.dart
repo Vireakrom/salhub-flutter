@@ -4,8 +4,6 @@ import 'package:salhub/views/pages/grammar/grammar_page.dart';
 import 'package:salhub/views/pages/jomrous/jomrous_page.dart';
 import 'package:salhub/views/pages/lomhat_page/lomhat_page.dart';
 import 'package:salhub/views/pages/rean_peasa/rean_peasa_page.dart';
-import 'package:salhub/views/widgets/lomhat/quize_widget.dart';
-
 
 class AdminContentsPage extends StatelessWidget {
   const AdminContentsPage({super.key});
@@ -15,7 +13,10 @@ class AdminContentsPage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(),
         backgroundColor: const Color(0xFFFFFDF2),
+        drawer: _buildCustomSidebar(context),
+
         body: SafeArea(
           child: Scrollbar(
             thumbVisibility: true,
@@ -53,9 +54,8 @@ class AdminContentsPage extends StatelessWidget {
                     lessonTitle: 'Lesson:',
                     khmerTitle: 'រៀនលេខខ្មែរ',
                     subtitle: '',
-                    
                   ),
-                 
+
                   // Lesson 3 Card (Icon Example)
                   GestureDetector(
                     onTap: () {
@@ -80,7 +80,7 @@ class AdminContentsPage extends StatelessWidget {
                       subtitle: '',
                     ),
                   ),
-                  
+
                   // Lesson 4 Card
                   GestureDetector(
                     onTap: () {
@@ -178,11 +178,10 @@ class AdminContentsPage extends StatelessWidget {
                     ),
                   ),
 
-
-            
                   // Bottom Add Lesson Card with Images on both sides
                   AddLessonCard(
-                    imagePath: 'assets/images/background_logo.png', // Replace with your image path
+                    imagePath:
+                        'assets/images/background_logo.png', // Replace with your image path
                     onTap: () {
                       // Action when "Add Lesson" is pressed
                     },
@@ -217,16 +216,9 @@ class AddLessonCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFFFCEFCD),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(
-          color: const Color(0xFF7F6464),
-          width: 1.5,
-        ),
+        border: Border.all(color: const Color(0xFF7F6464), width: 1.5),
         boxShadow: const [
-          BoxShadow(
-            blurRadius: 4,
-            offset: Offset(0, 2),
-            color: Colors.black12,
-          ),
+          BoxShadow(blurRadius: 4, offset: Offset(0, 2), color: Colors.black12),
         ],
       ),
       child: Row(
@@ -239,11 +231,7 @@ class AddLessonCard extends StatelessWidget {
             width: 85,
             fit: BoxFit.contain,
             errorBuilder: (context, error, stackTrace) {
-              return const Icon(
-                Icons.pets,
-                size: 65,
-                color: Color(0xFFD35400),
-              );
+              return const Icon(Icons.pets, size: 65, color: Color(0xFFD35400));
             },
           ),
 
@@ -285,11 +273,7 @@ class AddLessonCard extends StatelessWidget {
             width: 85,
             fit: BoxFit.contain,
             errorBuilder: (context, error, stackTrace) {
-              return const Icon(
-                Icons.pets,
-                size: 65,
-                color: Color(0xFFD35400),
-              );
+              return const Icon(Icons.pets, size: 65, color: Color(0xFFD35400));
             },
           ),
         ],
@@ -349,16 +333,8 @@ class LessonCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFFFCEFCD),
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(
-          color: const Color(0xFF7F6464),
-          width: 1.5,
-        ),
-        boxShadow: const [
-          BoxShadow(
-            blurRadius: 2,
-            offset: Offset(0, 1),
-          ),
-        ],
+        border: Border.all(color: const Color(0xFF7F6464), width: 1.5),
+        boxShadow: const [BoxShadow(blurRadius: 2, offset: Offset(0, 1))],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -373,10 +349,7 @@ class LessonCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: boxColor,
                   borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color: borderColor,
-                    width: 1.5,
-                  ),
+                  border: Border.all(color: borderColor, width: 1.5),
                   boxShadow: const [
                     BoxShadow(
                       blurRadius: 3,
@@ -385,9 +358,7 @@ class LessonCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: Center(
-                  child: _buildBoxContent(),
-                ),
+                child: Center(child: _buildBoxContent()),
               ),
               const SizedBox(width: 16),
 
@@ -440,22 +411,152 @@ class LessonCard extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
-                side: const BorderSide(
-                  color: Color(0xFF5D4837),
-                  width: 1.5,
-                ),
+                side: const BorderSide(color: Color(0xFF5D4837), width: 1.5),
               ),
             ),
             child: const Text(
               'Manage Lesson',
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-              ),
+              style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
             ),
           ),
         ],
       ),
     );
   }
+}
+
+Widget _buildCustomSidebar(BuildContext context) {
+  return Drawer(
+    width: 220,
+    backgroundColor: const Color(
+      0xFFFFFDE7,
+    ), // Cream background from reference image
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.horizontal(
+        right: Radius.circular(30), // Rounded right edges from screenshot
+      ),
+    ),
+    child: SafeArea(
+      child: Column(
+        children: [
+          const SizedBox(height: 20),
+
+          // Header Mascot / Logo
+          // Replace with Image.asset('assets/squirrel.png') if using an asset
+          Container(
+            height: 70,
+            width: 70,
+            decoration: const BoxDecoration(shape: BoxShape.circle),
+            child: Image.asset(
+              'assets/images/background_logo.png', // Path to your image file
+              fit: BoxFit.contain,
+            ),
+          ),
+
+          const SizedBox(height: 30),
+
+          // Navigation Items
+          _buildSidebarItem(
+            icon: Icons.home_outlined,
+            label: 'DashBoard',
+            isSelected: true,
+            onTap: () => Navigator.pop(context),
+          ),
+          _buildSidebarItem(
+            icon: Icons.assignment_outlined,
+            label: 'Contents',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      const AdminContentsPage(), // Replace with your target Page widget
+                ),
+              );
+            },
+          ),
+          _buildSidebarItem(
+            icon: Icons.person_outline,
+            label: 'Users',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      const Placeholder(), // Replace with your target Page widget
+                ),
+              );
+            },
+          ),
+          _buildSidebarItem(
+            icon: Icons.settings_outlined,
+            label: 'System',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      const Placeholder(), // Replace with your target Page widget
+                ),
+              );
+            },
+          ),
+          _buildSidebarItem(
+            icon: Icons.logout_outlined,
+            label: 'Logout',
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      const Placeholder(), // Replace with your target Page widget
+                ),
+              );
+            },
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+// Helper Widget for Sidebar Navigation Items
+Widget _buildSidebarItem({
+  required IconData icon,
+  required String label,
+  bool isSelected = false,
+  required VoidCallback onTap,
+}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+    child: InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        decoration: BoxDecoration(
+          color: isSelected ? Colors.grey.shade300 : Colors.transparent,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Row(
+          children: [
+            Icon(icon, color: Colors.black, size: 22),
+            const SizedBox(width: 14),
+            Text(
+              label,
+              style: const TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w600,
+                color: Colors.black87,
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
 }
