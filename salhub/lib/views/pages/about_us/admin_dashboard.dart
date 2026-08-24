@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salhub/data/notfiers.dart';
 import 'package:salhub/views/pages/about_us/admin_contents_page.dart';
 import 'package:salhub/views/pages/easy_pie_chart/easy_pie_chart.dart';
 
@@ -11,17 +12,17 @@ class AdminDashboard extends StatelessWidget {
       // =====================================================
       // APP BAR
       // =====================================================
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        centerTitle: true,
-        // Replace BackButtonWidget with Menu Icon Button
-        leading: Builder(
-          builder: (context) => IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () => Scaffold.of(context).openDrawer(),
-          ),
-        ),
-      ),
+      // appBar: AppBar(
+      //   automaticallyImplyLeading: false,
+      //   centerTitle: true,
+      //   // Replace BackButtonWidget with Menu Icon Button
+      //   leading: Builder(
+      //     builder: (context) => IconButton(
+      //       icon: const Icon(Icons.menu),
+      //       onPressed: () => Scaffold.of(context).openDrawer(),
+      //     ),
+      //   ),
+      // ),
 
       // =====================================================
       // SIDEBAR / DRAWER
@@ -36,32 +37,44 @@ class AdminDashboard extends StatelessWidget {
         child: Column(
           children: [
             // 1. DASHBOARD CARDS
-            Row(
-              children: [
-                Expanded(
-                  child: _buildDashboardCard(
-                    title: 'Total App Members',
-                    number: '2500',
-                    color: const Color(0xFFC2EA7E),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: _buildDashboardCard(
-                    title: "Today's Active Learners",
-                    number: '68',
-                    color: const Color(0xFF75D0F5),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: _buildDashboardCard(
-                    title: 'New Users',
-                    number: '45',
-                    color: const Color(0xFFFA8A87),
-                  ),
-                ),
-              ],
+            FutureBuilder(
+              future: authService.value.fetchTotalUsers(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+                if (snapshot.hasError) {
+                  return Center(child: Text('Error: ${snapshot.error}'));
+                }
+                final int totalUser = snapshot.data!;
+                return Row(
+                  children: [
+                    Expanded(
+                      child: _buildDashboardCard(
+                        title: 'Total App Members',
+                        number: '$totalUser',
+                        color: const Color(0xFFC2EA7E),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: _buildDashboardCard(
+                        title: "Today's Active Learners",
+                        number: '3',
+                        color: const Color(0xFF75D0F5),
+                      ),
+                    ),
+                    const SizedBox(width: 15),
+                    Expanded(
+                      child: _buildDashboardCard(
+                        title: 'New Users',
+                        number: '1',
+                        color: const Color(0xFFFA8A87),
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
 
             const SizedBox(height: 30),
@@ -77,12 +90,13 @@ class AdminDashboard extends StatelessWidget {
             const SizedBox(height: 30),
 
             // 4. NEW USER LIST
-            _buildNewUserTable(),
+            // _buildNewUserTable(),
 
-            const SizedBox(height: 20),
+            // const SizedBox(height: 20),
 
             // 5. RECENT ACTIVITY
             _buildRecentActivitySection(),
+            SizedBox(height: 60),
           ],
         ),
       ),
@@ -255,7 +269,7 @@ class AdminDashboard extends StatelessWidget {
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
             ),
 
-            const SizedBox(height: 15),
+            const SizedBox(height: 5),
 
             Text(
               number,
@@ -274,7 +288,7 @@ class AdminDashboard extends StatelessWidget {
   Widget _buildPieChartSection() {
     return Container(
       width: double.infinity,
-      height: 350,
+      height: 400,
       decoration: BoxDecoration(
         color: const Color(0xFFFFFEE9),
         borderRadius: BorderRadius.circular(24),
@@ -292,7 +306,7 @@ class AdminDashboard extends StatelessWidget {
           const SizedBox(height: 20),
 
           Expanded(child: Center(child: MyEasyPieChart())),
-
+          SizedBox(height: 35),
           Padding(
             padding: const EdgeInsets.only(bottom: 25, left: 20, right: 20),
             child: Wrap(
@@ -395,95 +409,95 @@ class AdminDashboard extends StatelessWidget {
   // 4. NEW USER TABLE
   // =========================================================
 
-  Widget _buildNewUserTable() {
-    return Center(
-      child: Container(
-        width: double.infinity,
-        height: 280,
-        padding: const EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          color: const Color(0xFFF8F4D8),
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(color: Colors.black12, width: 1),
-        ),
-        child: Column(
-          children: [
-            const Text(
-              'New User Lists',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
-              ),
-            ),
+  // Widget _buildNewUserTable() {
+  //   return Center(
+  //     child: Container(
+  //       width: double.infinity,
+  //       height: 280,
+  //       padding: const EdgeInsets.all(16.0),
+  //       decoration: BoxDecoration(
+  //         color: const Color(0xFFF8F4D8),
+  //         borderRadius: BorderRadius.circular(24),
+  //         border: Border.all(color: Colors.black12, width: 1),
+  //       ),
+  //       child: Column(
+  //         children: [
+  //           const Text(
+  //             'New User Lists',
+  //             textAlign: TextAlign.center,
+  //             style: TextStyle(
+  //               fontSize: 18,
+  //               fontWeight: FontWeight.bold,
+  //               color: Colors.black87,
+  //             ),
+  //           ),
 
-            const SizedBox(height: 12),
+  //           const SizedBox(height: 12),
 
-            Expanded(
-              child: Center(
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: DataTable(
-                    columnSpacing: 60,
+  //           Expanded(
+  //             child: Center(
+  //               child: SingleChildScrollView(
+  //                 scrollDirection: Axis.horizontal,
+  //                 child: DataTable(
+  //                   columnSpacing: 60,
 
-                    headingRowColor: WidgetStateProperty.all(
-                      const Color(0xFF8B6B58),
-                    ),
+  //                   headingRowColor: WidgetStateProperty.all(
+  //                     const Color(0xFF8B6B58),
+  //                   ),
 
-                    headingTextStyle: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+  //                   headingTextStyle: const TextStyle(
+  //                     color: Colors.white,
+  //                     fontWeight: FontWeight.bold,
+  //                   ),
 
-                    columns: const [
-                      DataColumn(label: Text('User ID')),
-                      DataColumn(label: Text('Name')),
-                      DataColumn(label: Text('Gender')),
-                      DataColumn(label: Text('Age')),
-                      DataColumn(label: Text('Reg.Date')),
-                    ],
+  //                   columns: const [
+  //                     DataColumn(label: Text('User ID')),
+  //                     DataColumn(label: Text('Name')),
+  //                     DataColumn(label: Text('Gender')),
+  //                     DataColumn(label: Text('Age')),
+  //                     DataColumn(label: Text('Reg.Date')),
+  //                   ],
 
-                    rows: const [
-                      DataRow(
-                        cells: [
-                          DataCell(Text('002501')),
-                          DataCell(Text('Reachny')),
-                          DataCell(Text('Female')),
-                          DataCell(Text('8')),
-                          DataCell(Text('29.07.2026')),
-                        ],
-                      ),
+  //                   rows: const [
+  //                     DataRow(
+  //                       cells: [
+  //                         DataCell(Text('002501')),
+  //                         DataCell(Text('Reachny')),
+  //                         DataCell(Text('Female')),
+  //                         DataCell(Text('8')),
+  //                         DataCell(Text('29.07.2026')),
+  //                       ],
+  //                     ),
 
-                      DataRow(
-                        cells: [
-                          DataCell(Text('002502')),
-                          DataCell(Text('Raksmey')),
-                          DataCell(Text('Male')),
-                          DataCell(Text('9')),
-                          DataCell(Text('29.07.2026')),
-                        ],
-                      ),
+  //                     DataRow(
+  //                       cells: [
+  //                         DataCell(Text('002502')),
+  //                         DataCell(Text('Raksmey')),
+  //                         DataCell(Text('Male')),
+  //                         DataCell(Text('9')),
+  //                         DataCell(Text('29.07.2026')),
+  //                       ],
+  //                     ),
 
-                      DataRow(
-                        cells: [
-                          DataCell(Text('002503')),
-                          DataCell(Text('Malish')),
-                          DataCell(Text('Female')),
-                          DataCell(Text('11')),
-                          DataCell(Text('29.07.2026')),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+  //                     DataRow(
+  //                       cells: [
+  //                         DataCell(Text('002503')),
+  //                         DataCell(Text('Malish')),
+  //                         DataCell(Text('Female')),
+  //                         DataCell(Text('11')),
+  //                         DataCell(Text('29.07.2026')),
+  //                       ],
+  //                     ),
+  //                   ],
+  //                 ),
+  //               ),
+  //             ),
+  //           ),
+  //         ],
+  //       ),
+  //     ),
+  //   );
+  // }
 
   // =========================================================
   // 5. RECENT ACTIVITY SECTION
@@ -571,7 +585,7 @@ class AdminDashboard extends StatelessWidget {
   }) {
     return Center(
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
@@ -581,9 +595,11 @@ class AdminDashboard extends StatelessWidget {
 
           const SizedBox(width: 5),
 
-          Text(
-            target.isEmpty ? '$user $action.' : '$user $action $target.',
-            style: const TextStyle(fontSize: 12),
+          Flexible(
+            child: Text(
+              target.isEmpty ? '$user $action.' : '$user $action $target.',
+              style: const TextStyle(fontSize: 12),
+            ),
           ),
         ],
       ),

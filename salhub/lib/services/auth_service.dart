@@ -125,6 +125,27 @@ class AuthService {
     }
   }
 
+  Future<int> fetchTotalUsers() async {
+    try {
+      final collectionRef = FirebaseFirestore.instance
+          .collection('users')
+          .withConverter<UserModel>(
+            fromFirestore: UserModel.fromFirestore,
+            toFirestore: (user, _) => user.toFirestore(),
+          );
+
+      QuerySnapshot<UserModel> querySnapshot = await collectionRef.get();
+
+      List<UserModel> usersList = querySnapshot.docs
+          .map((doc) => doc.data())
+          .toList();
+
+      return usersList.length;
+    } catch (e) {
+      return 0;
+    }
+  }
+
   Future<void> updateUserRole(String userId, String newRole) async {
     try {
       if (newRole != 'admin' && newRole != 'user') {

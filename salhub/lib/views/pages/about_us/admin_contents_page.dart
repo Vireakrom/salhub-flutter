@@ -13,9 +13,9 @@ class AdminContentsPage extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(),
-        backgroundColor: const Color(0xFFFFFDF2),
-        drawer: _buildCustomSidebar(context),
+        // appBar: AppBar(),
+        // backgroundColor: const Color(0xFFFFFDF2),
+        // drawer: _buildCustomSidebar(context),
 
         body: SafeArea(
           child: Scrollbar(
@@ -59,12 +59,12 @@ class AdminContentsPage extends StatelessWidget {
                   // Lesson 3 Card (Icon Example)
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const GrammarPage(),
-                        ),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const GrammarPage(),
+                      //   ),
+                      // );
                     },
                     child: LessonCard(
                       customWidget: Image.asset(
@@ -84,12 +84,12 @@ class AdminContentsPage extends StatelessWidget {
                   // Lesson 4 Card
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ReanPeasaPage(),
-                        ),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const ReanPeasaPage(),
+                      //   ),
+                      // );
                     },
                     child: LessonCard(
                       customWidget: Image.asset(
@@ -108,12 +108,12 @@ class AdminContentsPage extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const JomrousPage(),
-                        ),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const JomrousPage(),
+                      //   ),
+                      // );
                     },
                     child: LessonCard(
                       customWidget: Image.asset(
@@ -132,12 +132,12 @@ class AdminContentsPage extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const GeneralCulturePage(),
-                        ),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const GeneralCulturePage(),
+                      //   ),
+                      // );
                     },
                     child: LessonCard(
                       customWidget: Image.asset(
@@ -156,12 +156,12 @@ class AdminContentsPage extends StatelessWidget {
 
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LomhatPage(),
-                        ),
-                      );
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //     builder: (context) => const LomhatPage(),
+                      //   ),
+                      // );
                     },
                     child: LessonCard(
                       customWidget: Image.asset(
@@ -186,7 +186,7 @@ class AdminContentsPage extends StatelessWidget {
                       // Action when "Add Lesson" is pressed
                     },
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 60),
                 ],
               ),
             ),
@@ -264,17 +264,6 @@ class AddLessonCard extends StatelessWidget {
                 ),
               ),
             ),
-          ),
-
-          // Right Side Image
-          Image.asset(
-            imagePath,
-            height: 85,
-            width: 85,
-            fit: BoxFit.contain,
-            errorBuilder: (context, error, stackTrace) {
-              return const Icon(Icons.pets, size: 65, color: Color(0xFFD35400));
-            },
           ),
         ],
       ),
@@ -425,138 +414,138 @@ class LessonCard extends StatelessWidget {
   }
 }
 
-Widget _buildCustomSidebar(BuildContext context) {
-  return Drawer(
-    width: 220,
-    backgroundColor: const Color(
-      0xFFFFFDE7,
-    ), // Cream background from reference image
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.horizontal(
-        right: Radius.circular(30), // Rounded right edges from screenshot
-      ),
-    ),
-    child: SafeArea(
-      child: Column(
-        children: [
-          const SizedBox(height: 20),
+// Widget _buildCustomSidebar(BuildContext context) {
+//   return Drawer(
+//     width: 220,
+//     backgroundColor: const Color(
+//       0xFFFFFDE7,
+//     ), // Cream background from reference image
+//     shape: const RoundedRectangleBorder(
+//       borderRadius: BorderRadius.horizontal(
+//         right: Radius.circular(30), // Rounded right edges from screenshot
+//       ),
+//     ),
+//     child: SafeArea(
+//       child: Column(
+//         children: [
+//           const SizedBox(height: 20),
 
-          // Header Mascot / Logo
-          // Replace with Image.asset('assets/squirrel.png') if using an asset
-          Container(
-            height: 70,
-            width: 70,
-            decoration: const BoxDecoration(shape: BoxShape.circle),
-            child: Image.asset(
-              'assets/images/background_logo.png', // Path to your image file
-              fit: BoxFit.contain,
-            ),
-          ),
+//           // Header Mascot / Logo
+//           // Replace with Image.asset('assets/squirrel.png') if using an asset
+//           Container(
+//             height: 70,
+//             width: 70,
+//             decoration: const BoxDecoration(shape: BoxShape.circle),
+//             child: Image.asset(
+//               'assets/images/background_logo.png', // Path to your image file
+//               fit: BoxFit.contain,
+//             ),
+//           ),
 
-          const SizedBox(height: 30),
+//           const SizedBox(height: 30),
 
-          // Navigation Items
-          _buildSidebarItem(
-            icon: Icons.home_outlined,
-            label: 'DashBoard',
-            isSelected: true,
-            onTap: () => Navigator.pop(context),
-          ),
-          _buildSidebarItem(
-            icon: Icons.assignment_outlined,
-            label: 'Contents',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      const AdminContentsPage(), // Replace with your target Page widget
-                ),
-              );
-            },
-          ),
-          _buildSidebarItem(
-            icon: Icons.person_outline,
-            label: 'Users',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      const Placeholder(), // Replace with your target Page widget
-                ),
-              );
-            },
-          ),
-          _buildSidebarItem(
-            icon: Icons.settings_outlined,
-            label: 'System',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      const Placeholder(), // Replace with your target Page widget
-                ),
-              );
-            },
-          ),
-          _buildSidebarItem(
-            icon: Icons.logout_outlined,
-            label: 'Logout',
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) =>
-                      const Placeholder(), // Replace with your target Page widget
-                ),
-              );
-            },
-          ),
-        ],
-      ),
-    ),
-  );
-}
+//           // Navigation Items
+//           _buildSidebarItem(
+//             icon: Icons.home_outlined,
+//             label: 'DashBoard',
+//             isSelected: true,
+//             onTap: () => Navigator.pop(context),
+//           ),
+//           _buildSidebarItem(
+//             icon: Icons.assignment_outlined,
+//             label: 'Contents',
+//             onTap: () {
+//               Navigator.pop(context);
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(
+//                   builder: (context) =>
+//                       const AdminContentsPage(), // Replace with your target Page widget
+//                 ),
+//               );
+//             },
+//           ),
+//           _buildSidebarItem(
+//             icon: Icons.person_outline,
+//             label: 'Users',
+//             onTap: () {
+//               Navigator.pop(context);
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(
+//                   builder: (context) =>
+//                       const Placeholder(), // Replace with your target Page widget
+//                 ),
+//               );
+//             },
+//           ),
+//           _buildSidebarItem(
+//             icon: Icons.settings_outlined,
+//             label: 'System',
+//             onTap: () {
+//               Navigator.pop(context);
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(
+//                   builder: (context) =>
+//                       const Placeholder(), // Replace with your target Page widget
+//                 ),
+//               );
+//             },
+//           ),
+//           _buildSidebarItem(
+//             icon: Icons.logout_outlined,
+//             label: 'Logout',
+//             onTap: () {
+//               Navigator.pop(context);
+//               Navigator.push(
+//                 context,
+//                 MaterialPageRoute(
+//                   builder: (context) =>
+//                       const Placeholder(), // Replace with your target Page widget
+//                 ),
+//               );
+//             },
+//           ),
+//         ],
+//       ),
+//     ),
+//   );
+// }
 
 // Helper Widget for Sidebar Navigation Items
-Widget _buildSidebarItem({
-  required IconData icon,
-  required String label,
-  bool isSelected = false,
-  required VoidCallback onTap,
-}) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-    child: InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-        decoration: BoxDecoration(
-          color: isSelected ? Colors.grey.shade300 : Colors.transparent,
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Row(
-          children: [
-            Icon(icon, color: Colors.black, size: 22),
-            const SizedBox(width: 14),
-            Text(
-              label,
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                color: Colors.black87,
-              ),
-            ),
-          ],
-        ),
-      ),
-    ),
-  );
-}
+// Widget _buildSidebarItem({
+//   required IconData icon,
+//   required String label,
+//   bool isSelected = false,
+//   required VoidCallback onTap,
+// }) {
+//   return Padding(
+//     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+//     child: InkWell(
+//       onTap: onTap,
+//       borderRadius: BorderRadius.circular(12),
+//       child: Container(
+//         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+//         decoration: BoxDecoration(
+//           color: isSelected ? Colors.grey.shade300 : Colors.transparent,
+//           borderRadius: BorderRadius.circular(12),
+//         ),
+//         child: Row(
+//           children: [
+//             Icon(icon, color: Colors.black, size: 22),
+//             const SizedBox(width: 14),
+//             Text(
+//               label,
+//               style: const TextStyle(
+//                 fontSize: 15,
+//                 fontWeight: FontWeight.w600,
+//                 color: Colors.black87,
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     ),
+//   );
+// }
