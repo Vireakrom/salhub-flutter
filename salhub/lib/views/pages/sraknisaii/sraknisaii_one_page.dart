@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 
@@ -9,6 +10,11 @@ class SraknisaiiOnePage extends StatefulWidget {
 }
 
 class _SraknisaiiOnePageState extends State<SraknisaiiOnePage> {
+  final audioPlayer = AudioPlayer();
+  Future<void> playSound(String audioPath) async {
+    await audioPlayer.play(AssetSource(audioPath));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +85,7 @@ class _SraknisaiiOnePageState extends State<SraknisaiiOnePage> {
                             size: 30,
                           ),
                           onPressed: () {
-                            print("Play audio");
+                            playSound("audio/kor.mp3");
                           },
                         ),
                       ],
@@ -367,7 +373,7 @@ class _SraknisaiiOnePageState extends State<SraknisaiiOnePage> {
                           size: 30,
                         ),
                         onPressed: () {
-                          print("Play audio");
+                          playSound("audio/kor.mp3");
                         },
                       ),
                     ],

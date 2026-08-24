@@ -6,7 +6,6 @@ import 'package:salhub/views/pages/grammar/grammar_lesson4.dart';
 import 'package:salhub/views/pages/grammar/grammar_lesson5.dart';
 import 'package:salhub/views/widgets/back_button_widget.dart';
 import 'package:salhub/views/widgets/grammar/grmmar_card_widget.dart';
-import 'package:salhub/views/widgets/level_widget.dart';
 
 class GrammarPage extends StatelessWidget {
   const GrammarPage({super.key});
@@ -55,29 +54,29 @@ class GrammarPage extends StatelessWidget {
                 crossAxisCount: 2,
                 children: <Widget>[
                   GrammarCardWidget(
-                      title: "កម្រិត ១",
-                      description: "Level 1",
-                      nextPage: GrammarLesson1(),
+                    title: "កម្រិត ១",
+                    description: "Level 1",
+                    nextPage: GrammarLesson1(),
                   ),
                   GrammarCardWidget(
-                      title: "កម្រិត ២",
-                      description: "Level 2",
-                      nextPage: GrammarLesson2(),
+                    title: "កម្រិត ២",
+                    description: "Level 2",
+                    nextPage: GrammarLesson2(),
                   ),
                   GrammarCardWidget(
-                      title: "កម្រិត ៣",
-                      description: "Level 3",
-                      nextPage: GrammarLesson3(),
+                    title: "កម្រិត ៣",
+                    description: "Level 3",
+                    nextPage: GrammarLesson3(),
                   ),
                   GrammarCardWidget(
-                      title: "កម្រិត ៤",
-                      description: "Level 4",
-                      nextPage: GrammarLesson4(),
+                    title: "កម្រិត ៤",
+                    description: "Level 4",
+                    nextPage: GrammarLesson4(),
                   ),
                   GrammarCardWidget(
-                      title: "កម្រិត ៥",
-                      description: "Level 5",
-                      nextPage: GrammarLesson5(),
+                    title: "កម្រិត ៥",
+                    description: "Level 5",
+                    nextPage: GrammarLesson5(),
                   ),
                 ],
               ),
@@ -88,4 +87,3 @@ class GrammarPage extends StatelessWidget {
     );
   }
 }
- 

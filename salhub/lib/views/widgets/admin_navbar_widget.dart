@@ -32,7 +32,7 @@ class AdminNavbarWidget extends StatelessWidget {
                 0,
                 selectedPage,
               ),
-
+              // _buildNavItem(Icons.dashboard, "Dashboard", 1, selectedPage),
               _buildNavItem(Icons.settings, "ការកំណត់", 1, selectedPage),
             ],
           ),

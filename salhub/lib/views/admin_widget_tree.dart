@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/data/notfiers.dart';
+import 'package:salhub/views/pages/about_us/admin_dashboard.dart';
 import 'package:salhub/views/pages/admin/admin_page.dart';
 import 'package:salhub/views/pages/setting/setting_page.dart';
 import 'package:salhub/views/widgets/admin_navbar_widget.dart';
 
-List<Widget> pages = [AdminPage(), SettingPage()];
+List<Widget> pages = [AdminPage(), SettingPage(), AdminDashboard()];
 
 class AdminWidgetTree extends StatelessWidget {
   const AdminWidgetTree({super.key});
