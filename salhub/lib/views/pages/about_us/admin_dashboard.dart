@@ -27,7 +27,7 @@ class AdminDashboard extends StatelessWidget {
       // =====================================================
       // SIDEBAR / DRAWER
       // =====================================================
-      drawer: _buildCustomSidebar(context),
+      // drawer: _buildCustomSidebar(context),
 
       // =====================================================
       // BODY
