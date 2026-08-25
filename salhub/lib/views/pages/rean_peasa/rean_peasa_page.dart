@@ -22,11 +22,7 @@ class ReanPeasaPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         leadingWidth: 100,
         leading: BackButtonWidget(),
-        title: Text(
-          "រៀនភាសាប្រចាំថ្ងៃ",
-          style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
-        ),
-        centerTitle: true,
+       
       ),
       body: Container(
         width: screenWidth,
@@ -45,6 +41,16 @@ class ReanPeasaPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text(
+                  "រៀនភាសាប្រចាំថ្ងៃ",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Color(0xFF790303),
+                  ),
+                ),
+              ),
               GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
