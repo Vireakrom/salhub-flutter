@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:salhub/views/pages/general_culture/general_culture_page.dart';
-import 'package:salhub/views/pages/grammar/grammar_page.dart';
-import 'package:salhub/views/pages/jomrous/jomrous_page.dart';
-import 'package:salhub/views/pages/lomhat_page/lomhat_page.dart';
-import 'package:salhub/views/pages/rean_peasa/rean_peasa_page.dart';
 
 class AdminContentsPage extends StatelessWidget {
   const AdminContentsPage({super.key});
@@ -186,7 +181,7 @@ class AdminContentsPage extends StatelessWidget {
                       // Action when "Add Lesson" is pressed
                     },
                   ),
-                  const SizedBox(height: 60),
+                  const SizedBox(height: 85),
                 ],
               ),
             ),

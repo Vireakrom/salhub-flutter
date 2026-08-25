@@ -1,6 +1,7 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-class CorrectDialogWidget extends StatelessWidget {
+class CorrectDialogWidget extends StatefulWidget {
   const CorrectDialogWidget({
     super.key,
     required this.nextPage,
@@ -8,6 +9,22 @@ class CorrectDialogWidget extends StatelessWidget {
   });
   final Widget nextPage;
   final bool isLast;
+
+  @override
+  State<CorrectDialogWidget> createState() => _CorrectDialogWidgetState();
+}
+
+class _CorrectDialogWidgetState extends State<CorrectDialogWidget> {
+  final audioPlayer = AudioPlayer();
+  Future<void> playSound() async {
+    await audioPlayer.play(AssetSource('audio/correct.mp3'));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    playSound();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,16 +41,16 @@ class CorrectDialogWidget extends StatelessWidget {
             Text("ល្អណាស់", style: TextStyle(fontSize: 20)),
             TextButton(
               onPressed: () {
-                if (isLast == true) {
+                if (widget.isLast == true) {
                   Navigator.pushAndRemoveUntil(
                     context,
-                    MaterialPageRoute(builder: (context) => nextPage),
+                    MaterialPageRoute(builder: (context) => widget.nextPage),
                     (route) => false,
                   );
                 } else {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => nextPage),
+                    MaterialPageRoute(builder: (context) => widget.nextPage),
                   );
                 }
               },

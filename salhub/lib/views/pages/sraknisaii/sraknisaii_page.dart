@@ -50,18 +50,21 @@ class SraknisaiiPage extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 crossAxisSpacing: 50,
                 mainAxisSpacing: 50,
-                crossAxisCount: 2,
+                crossAxisCount: 1,
                 children: <Widget>[
                   SrakNisaiiWidget(
                     title: "ព្យញ្ជនៈ",
+                    engTitle: "Consonant",
                     nextPage: SraknisaiiOnePage(),
                   ),
                   SrakNisaiiWidget(
                     title: "ស្រះនិស្យ័យ",
+                    engTitle: "vowel",
                     nextPage: SraknisaiiTwoPage(),
                   ),
                   SrakNisaiiWidget(
                     title: "ស្រះពេញតួរ",
+                    engTitle: "independent vowel",
                     nextPage: SraknisaiiThreePage(),
                   ),
                 ],

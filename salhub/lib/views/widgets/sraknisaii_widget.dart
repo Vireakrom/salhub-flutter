@@ -5,9 +5,11 @@ class SrakNisaiiWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.nextPage,
+    required this.engTitle,
   });
 
   final String title;
+  final String engTitle;
   final Widget nextPage;
 
   @override
@@ -32,8 +34,16 @@ class SrakNisaiiWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
+                textAlign: .center,
                 title,
                 style: TextStyle(fontSize: 24, color: Color(0xFF6D3F21)),
+              ),
+              FittedBox(
+                child: Text(
+                  textAlign: .center,
+                  engTitle,
+                  style: TextStyle(fontSize: 24, color: Color(0xFF6D3F21)),
+                ),
               ),
             ],
           ),

@@ -1,7 +1,24 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-class IncorrectDialogWidget extends StatelessWidget {
+class IncorrectDialogWidget extends StatefulWidget {
   const IncorrectDialogWidget({super.key});
+
+  @override
+  State<IncorrectDialogWidget> createState() => _IncorrectDialogWidgetState();
+}
+
+class _IncorrectDialogWidgetState extends State<IncorrectDialogWidget> {
+  final audioPlayer = AudioPlayer();
+  Future<void> playSound() async {
+    await audioPlayer.play(AssetSource('audio/incorrect.mp3'));
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    playSound();
+  }
 
   @override
   Widget build(BuildContext context) {
