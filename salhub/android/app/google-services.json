@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "273567794894",
+    "project_id": "salhub-cee08",
+    "storage_bucket": "salhub-cee08.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273567794894:android:a34ea96c505fc973f6329f",
+        "android_client_info": {
+          "package_name": "com.example.salhub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO2l_ZJxeGbRoNPA0h-WFPmkmfUi-rzN0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
