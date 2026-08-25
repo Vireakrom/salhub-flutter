@@ -21,12 +21,9 @@ class GrammarPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         leadingWidth: 100,
         leading: BackButtonWidget(),
-        title: Text(
-          "រៀនវេយ្យាករណ៍",
-          style: TextStyle(fontSize: 25, color: Color(0xFF6D3F21)),
+       
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
       body: Container(
         width: screenWidth,
         height: screenHeight,
@@ -44,6 +41,16 @@ class GrammarPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text(
+                  "រៀនវេយ្យាករណ៍",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Color(0xFF6D3F21),
+                  ),
+                ),
+              ),
               GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),

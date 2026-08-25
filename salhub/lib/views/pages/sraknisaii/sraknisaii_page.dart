@@ -16,11 +16,7 @@ class SraknisaiiPage extends StatelessWidget {
         automaticallyImplyLeading: false,
         leadingWidth: 100,
         leading: BackButtonWidget(),
-        title: Text(
-          "រៀនអក្សរខ្មែរ ",
-          style: TextStyle(fontSize: 25, color: Color(0xFF790303)),
-        ),
-        centerTitle: true,
+      
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -37,6 +33,16 @@ class SraknisaiiPage extends StatelessWidget {
           ),
           child: Column(
             children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
+                child: Text(
+                  "រៀនអក្សរខ្មែរ ",
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Color(0xFF790303),
+                  ),
+                ),
+              ),
               GridView.count(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
