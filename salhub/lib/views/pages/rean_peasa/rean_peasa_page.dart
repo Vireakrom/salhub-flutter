@@ -44,7 +44,9 @@ class ReanPeasaPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Text(
-                  "រៀនភាសាប្រចាំថ្ងៃ",
+                  "រៀនភាសាប្រចាំថ្ងៃ\n"
+                  "Daily communicate",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25,
                     color: Color(0xFF790303),

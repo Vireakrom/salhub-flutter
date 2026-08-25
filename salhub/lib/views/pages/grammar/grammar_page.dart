@@ -44,7 +44,9 @@ class GrammarPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Text(
-                  "រៀនវេយ្យាករណ៍",
+                  "រៀនវេយ្យាករណ៍\n"
+                  "Grammer",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25,
                     color: Color(0xFF6D3F21),

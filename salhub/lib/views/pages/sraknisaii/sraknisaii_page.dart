@@ -36,7 +36,9 @@ class SraknisaiiPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Text(
-                  "រៀនអក្សរខ្មែរ ",
+                  "រៀនអក្សរខ្មែរ\n"
+                  "Alphabet",
+                  textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 25,
                     color: Color(0xFF790303),
