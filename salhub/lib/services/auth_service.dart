@@ -20,6 +20,9 @@ class AuthService {
         .collection('users')
         .doc(userCredential.user!.uid)
         .get();
+    if (userDoc.exists == false) {
+      signOut();
+    }
 
     return userDoc['role'];
   }

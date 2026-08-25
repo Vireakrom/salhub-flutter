@@ -48,14 +48,17 @@ class SraknisaiiPage extends StatelessWidget {
                 children: <Widget>[
                   SrakNisaiiWidget(
                     title: "ព្យញ្ជនៈ",
+                    engTitle: "Consonant",
                     nextPage: SraknisaiiOnePage(),
                   ),
                   SrakNisaiiWidget(
                     title: "ស្រះនិស្យ័យ",
+                    engTitle: "vowel",
                     nextPage: SraknisaiiTwoPage(),
                   ),
                   SrakNisaiiWidget(
                     title: "ស្រះពេញតួរ",
+                    engTitle: "independent vowel",
                     nextPage: SraknisaiiThreePage(),
                   ),
                 ],
