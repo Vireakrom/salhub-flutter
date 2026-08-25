@@ -34,12 +34,16 @@ class SrakNisaiiWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
+                textAlign: .center,
                 title,
                 style: TextStyle(fontSize: 24, color: Color(0xFF6D3F21)),
               ),
-              Text(
-                engTitle,
-                style: TextStyle(fontSize: 24, color: Color(0xFF6D3F21)),
+              FittedBox(
+                child: Text(
+                  textAlign: .center,
+                  engTitle,
+                  style: TextStyle(fontSize: 24, color: Color(0xFF6D3F21)),
+                ),
               ),
             ],
           ),

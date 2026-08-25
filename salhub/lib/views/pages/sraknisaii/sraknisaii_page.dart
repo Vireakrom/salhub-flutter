@@ -44,7 +44,7 @@ class SraknisaiiPage extends StatelessWidget {
                 padding: const EdgeInsets.all(20),
                 crossAxisSpacing: 50,
                 mainAxisSpacing: 50,
-                crossAxisCount: 2,
+                crossAxisCount: 1,
                 children: <Widget>[
                   SrakNisaiiWidget(
                     title: "ព្យញ្ជនៈ",
