@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/data/notfiers.dart';
-import 'package:salhub/views/pages/about_us/admin_contents_page.dart';
 import 'package:salhub/views/pages/easy_pie_chart/easy_pie_chart.dart';
 
 class AdminDashboard extends StatelessWidget {
@@ -9,29 +8,6 @@ class AdminDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // =====================================================
-      // APP BAR
-      // =====================================================
-      // appBar: AppBar(
-      //   automaticallyImplyLeading: false,
-      //   centerTitle: true,
-      //   // Replace BackButtonWidget with Menu Icon Button
-      //   leading: Builder(
-      //     builder: (context) => IconButton(
-      //       icon: const Icon(Icons.menu),
-      //       onPressed: () => Scaffold.of(context).openDrawer(),
-      //     ),
-      //   ),
-      // ),
-
-      // =====================================================
-      // SIDEBAR / DRAWER
-      // =====================================================
-      // drawer: _buildCustomSidebar(context),
-
-      // =====================================================
-      // BODY
-      // =====================================================
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(30),
         child: Column(
@@ -98,146 +74,6 @@ class AdminDashboard extends StatelessWidget {
             _buildRecentActivitySection(),
             SizedBox(height: 60),
           ],
-        ),
-      ),
-    );
-  }
-
-  // =========================================================
-  // CUSTOM SIDEBAR WIDGET
-  // =========================================================
-  Widget _buildCustomSidebar(BuildContext context) {
-    return Drawer(
-      width: 220,
-      backgroundColor: const Color(
-        0xFFFFFDE7,
-      ), // Cream background from reference image
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.horizontal(
-          right: Radius.circular(30), // Rounded right edges from screenshot
-        ),
-      ),
-      child: SafeArea(
-        child: Column(
-          children: [
-            const SizedBox(height: 20),
-
-            // Header Mascot / Logo
-            // Replace with Image.asset('assets/squirrel.png') if using an asset
-            Container(
-              height: 70,
-              width: 70,
-              decoration: const BoxDecoration(shape: BoxShape.circle),
-              child: Image.asset(
-                'assets/images/background_logo.png', // Path to your image file
-                fit: BoxFit.contain,
-              ),
-            ),
-
-            const SizedBox(height: 30),
-
-            // Navigation Items
-            _buildSidebarItem(
-              icon: Icons.home_outlined,
-              label: 'DashBoard',
-              isSelected: true,
-              onTap: () => Navigator.pop(context),
-            ),
-
-            _buildSidebarItem(
-              icon: Icons.assignment_outlined,
-              label: 'Contents',
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        const AdminContentsPage(), // Replace with your target Page widget
-                  ),
-                );
-              },
-            ),
-            _buildSidebarItem(
-              icon: Icons.person_outline,
-              label: 'Users',
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        const Placeholder(), // Replace with your target Page widget
-                  ),
-                );
-              },
-            ),
-            _buildSidebarItem(
-              icon: Icons.settings_outlined,
-              label: 'System',
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        const Placeholder(), // Replace with your target Page widget
-                  ),
-                );
-              },
-            ),
-            _buildSidebarItem(
-              icon: Icons.logout_outlined,
-              label: 'Logout',
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        const Placeholder(), // Replace with your target Page widget
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  // Helper Widget for Sidebar Navigation Items
-  Widget _buildSidebarItem({
-    required IconData icon,
-    required String label,
-    bool isSelected = false,
-    required VoidCallback onTap,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(12),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-          decoration: BoxDecoration(
-            color: isSelected ? Colors.grey.shade300 : Colors.transparent,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Row(
-            children: [
-              Icon(icon, color: Colors.black, size: 22),
-              const SizedBox(width: 14),
-              Text(
-                label,
-                style: const TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black87,
-                ),
-              ),
-            ],
-          ),
         ),
       ),
     );

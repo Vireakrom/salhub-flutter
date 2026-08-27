@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:salhub/data/notfiers.dart';
 import 'package:salhub/views/admin_widget_tree.dart';
@@ -17,6 +16,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _signInFormKey = GlobalKey<FormState>();
+
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController controllerPw = TextEditingController();
   String errorMessage = '';
@@ -119,49 +120,81 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 20),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: "Email",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    suffixIcon: Align(
-                      widthFactor: 1.0,
-                      heightFactor: 1.0,
-                      child: Icon(Icons.email),
-                    ),
-                  ),
 
-                  controller: controllerEmail,
-                  onEditingComplete: () => setState(() {}),
-                ),
-                SizedBox(height: 20),
-
-                TextField(
-                  obscureText: hidden,
-                  decoration: InputDecoration(
-                    hintText: "Password",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    suffixIcon: Align(
-                      widthFactor: 1.0,
-                      heightFactor: 1.0,
-                      child: IconButton(
-                        onPressed: () => setState(() {
-                          hidden = !hidden;
-                        }),
-                        icon: Icon(
-                          hidden == true
-                              ? Icons.visibility_off
-                              : Icons.remove_red_eye,
+                Form(
+                  key: _signInFormKey,
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Email",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          suffixIcon: Align(
+                            widthFactor: 1.0,
+                            heightFactor: 1.0,
+                            child: Icon(Icons.email),
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
 
-                  controller: controllerPw,
-                  onEditingComplete: () => setState(() {}),
+                        controller: controllerEmail,
+                        onEditingComplete: () => setState(() {}),
+                        validator: (value) {
+                          const pattern =
+                              r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'"
+                              r'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-'
+                              r'\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*'
+                              r'[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4]'
+                              r'[0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9]'
+                              r'[0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\'
+                              r'x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])';
+                          final regex = RegExp(pattern);
+
+                          if (value == '') {
+                            return "Please enter email.";
+                          }
+                          if (!regex.hasMatch(value.toString())) {
+                            return "Please enter a valid email.";
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        obscureText: hidden,
+                        decoration: InputDecoration(
+                          hintText: "Password",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          suffixIcon: Align(
+                            widthFactor: 1.0,
+                            heightFactor: 1.0,
+                            child: IconButton(
+                              onPressed: () => setState(() {
+                                hidden = !hidden;
+                              }),
+                              icon: Icon(
+                                hidden == true
+                                    ? Icons.visibility_off
+                                    : Icons.remove_red_eye,
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        controller: controllerPw,
+                        onEditingComplete: () => setState(() {}),
+                        validator: (value) {
+                          if (value == '') {
+                            return 'Please enter password';
+                          }
+                          return null;
+                        },
+                      ),
+                    ],
+                  ),
                 ),
 
                 SizedBox(height: 20),
@@ -186,12 +219,15 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
-                Text(errorMessage, style: TextStyle(color: Colors.red)),
 
                 SizedBox(height: 50),
 
                 OutlinedButton(
-                  onPressed: _isLoading ? null : () => signIn(),
+                  onPressed: () {
+                    if (_signInFormKey.currentState!.validate()) {
+                      _isLoading ? null : signIn();
+                    }
+                  },
                   style: OutlinedButton.styleFrom(
                     minimumSize: Size(double.infinity, 40),
                     shape: RoundedRectangleBorder(

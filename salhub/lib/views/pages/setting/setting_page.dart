@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:salhub/data/notfiers.dart';
 import 'package:salhub/views/pages/auth/logout_page.dart';
+import 'package:salhub/views/pages/setting/update_username_page.dart';
 
-class SettingPage extends StatelessWidget {
+class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
+
+  @override
+  State<SettingPage> createState() => _SettingPageState();
+}
+
+class _SettingPageState extends State<SettingPage> {
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
         width: screenWidth,
@@ -31,9 +43,28 @@ class SettingPage extends StatelessWidget {
                       "assets/images/user_profile.png",
                     ),
                   ),
-                  Text(
-                    authService.value.currentUser!.displayName ?? "Username",
-                    style: TextStyle(fontSize: 21),
+                  Row(
+                    mainAxisAlignment: .center,
+                    children: [
+                      Text(
+                        authService.value.currentUser!.displayName ??
+                            "Username",
+                        style: TextStyle(fontSize: 21),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => UpdateUsernamePage(),
+                            ),
+                          ).then((_) {
+                            setState(() {});
+                          });
+                        },
+                        icon: Icon(Icons.edit, size: 18),
+                      ),
+                    ],
                   ),
                   SizedBox(height: 20),
                   GestureDetector(

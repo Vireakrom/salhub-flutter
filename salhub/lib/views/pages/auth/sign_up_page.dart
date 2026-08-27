@@ -12,6 +12,8 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final _signUpFormKey = GlobalKey<FormState>();
+
   TextEditingController controllerUsername = TextEditingController();
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController controllerPw = TextEditingController();
@@ -104,74 +106,128 @@ class _SignUpPageState extends State<SignUpPage> {
                   style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 20),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: "Username",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    suffixIcon: Align(
-                      widthFactor: 1.0,
-                      heightFactor: 1.0,
-                      child: Icon(Icons.person),
-                    ),
-                  ),
 
-                  controller: controllerUsername,
-                  onEditingComplete: () => setState(() {}),
-                ),
-                SizedBox(height: 20),
-
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: "Email",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    suffixIcon: Align(
-                      widthFactor: 1.0,
-                      heightFactor: 1.0,
-                      child: Icon(Icons.email),
-                    ),
-                  ),
-
-                  controller: controllerEmail,
-                  onEditingComplete: () => setState(() {}),
-                ),
-                SizedBox(height: 20),
-
-                TextField(
-                  obscureText: hidden,
-                  decoration: InputDecoration(
-                    hintText: "Password",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    suffixIcon: Align(
-                      widthFactor: 1.0,
-                      heightFactor: 1.0,
-                      child: IconButton(
-                        onPressed: () => setState(() {
-                          hidden = !hidden;
-                        }),
-                        icon: Icon(
-                          hidden == true
-                              ? Icons.visibility_off
-                              : Icons.remove_red_eye,
+                Form(
+                  key: _signUpFormKey,
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Username",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          suffixIcon: Align(
+                            widthFactor: 1.0,
+                            heightFactor: 1.0,
+                            child: Icon(Icons.person),
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
 
-                  controller: controllerPw,
-                  onEditingComplete: _isLoading ? null : () => setState(() {}),
+                        controller: controllerUsername,
+                        onEditingComplete: () => setState(() {}),
+                        validator: (value) {
+                          if (value == '') {
+                            return 'Please enter username';
+                          } else {
+                            if (value.toString().length < 3) {
+                              return 'Username should be more than or equal to 3 character.';
+                            } else {
+                              return null;
+                            }
+                          }
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Email",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          suffixIcon: Align(
+                            widthFactor: 1.0,
+                            heightFactor: 1.0,
+                            child: Icon(Icons.email),
+                          ),
+                        ),
+
+                        controller: controllerEmail,
+                        onEditingComplete: () => setState(() {}),
+                        validator: (value) {
+                          const pattern =
+                              r"(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'"
+                              r'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-'
+                              r'\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*'
+                              r'[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4]'
+                              r'[0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9]'
+                              r'[0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\'
+                              r'x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])';
+                          final regex = RegExp(pattern);
+
+                          if (value == '') {
+                            return "Please enter email.";
+                          }
+                          if (!regex.hasMatch(value.toString())) {
+                            return "Please enter a valid email.";
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 20),
+
+                      TextFormField(
+                        obscureText: hidden,
+                        decoration: InputDecoration(
+                          hintText: "Password",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(5),
+                          ),
+                          suffixIcon: Align(
+                            widthFactor: 1.0,
+                            heightFactor: 1.0,
+                            child: IconButton(
+                              onPressed: () => setState(() {
+                                hidden = !hidden;
+                              }),
+                              icon: Icon(
+                                hidden == true
+                                    ? Icons.visibility_off
+                                    : Icons.remove_red_eye,
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        controller: controllerPw,
+                        onEditingComplete: _isLoading
+                            ? null
+                            : () => setState(() {}),
+
+                        validator: (value) {
+                          RegExp regex = RegExp(r'^.{6,}$');
+                          if (value == '') {
+                            return 'Please enter password';
+                          } else {
+                            if (!regex.hasMatch(value.toString())) {
+                              return 'Password should be more than or equal to 6.';
+                            } else {
+                              return null;
+                            }
+                          }
+                        },
+                      ),
+                    ],
+                  ),
                 ),
 
                 SizedBox(height: 50),
                 Text(errorMessage, style: TextStyle(color: Colors.red)),
                 OutlinedButton(
                   onPressed: () {
-                    register();
+                    if (_signUpFormKey.currentState!.validate()) {
+                      register();
+                    }
                   },
                   style: OutlinedButton.styleFrom(
                     minimumSize: Size(double.infinity, 40),
