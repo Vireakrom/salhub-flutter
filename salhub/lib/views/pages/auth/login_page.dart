@@ -219,6 +219,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
+                Text(errorMessage, style: TextStyle(color: Colors.red)),
 
                 SizedBox(height: 50),
 
