@@ -79,7 +79,7 @@ class _SraknisaiiTwoPageState extends State<SraknisaiiTwoPage> {
                           size: 30,
                         ),
                         onPressed: () {
-                          playSound("audio/kor.mp3");
+                          playSound("audio/aa.mp3");
                         },
                       ),
                     ],
@@ -139,7 +139,7 @@ class _SraknisaiiTwoPageState extends State<SraknisaiiTwoPage> {
                           size: 30,
                         ),
                         onPressed: () {
-                          playSound("audio/kor.mp3");
+                          playSound("audio/ee.mp3");
                         },
                       ),
                     ],
@@ -199,7 +199,7 @@ class _SraknisaiiTwoPageState extends State<SraknisaiiTwoPage> {
                           size: 30,
                         ),
                         onPressed: () {
-                          playSound("audio/kor.mp3");
+                          playSound("audio/ev.mp3");
                         },
                       ),
                     ],
@@ -259,7 +259,7 @@ class _SraknisaiiTwoPageState extends State<SraknisaiiTwoPage> {
                           size: 30,
                         ),
                         onPressed: () {
-                          playSound("audio/kor.mp3");
+                          playSound("audio/os.mp3");
                         },
                       ),
                     ],
